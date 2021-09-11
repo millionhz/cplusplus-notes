@@ -235,7 +235,7 @@ Operators are symbols that triggers an action when applied to variables and othe
 
 <!-- ![data/Untitled%205.png](data/Image6.png) -->
 
-<table class="wikitable">
+<table>
 
 <tbody><tr>
 <th style="text-align: left"> Precedence
@@ -760,6 +760,8 @@ getline(cin, city);
 - `setfill()` - use a specific character to fill a width (specified by `setw()`).
 
 > use iomanip header to get access to setw() and setprecision()
+
+## Examples:
 
 ![data/Untitled%208.png](data/Image10.png)
 
