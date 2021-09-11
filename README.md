@@ -366,6 +366,28 @@ Char is actually an integer in the backend and can be used to make a program mor
 
 ![data/Untitled%206.png](data/Image8.png)
 
+[A better size chart here](https://docs.oracle.com/cd/E19253-01/817-6223/chp-typeopexpr-2/index.html)
+
+## Can double hold store data than long?
+
+Double is a floating point data type while long is an integral data type. The difference is in the manner of encoding number information.
+
+The 64 bit double format based on IEEE754 standard has the following breakup:
+  - Sign bit: 1 bit
+  - Exponent width: 11 bits
+  - Significant precision: 53 bits (52 explicitly stored)
+
+
+[Source](https://en.wikipedia.org/wiki/Double-precision_floating-point_format)
+
+The exponent gives double precision numbers a very large range - Negative numbers are in the range -1.79769e+308 to -2.22507e-308 and positive numbers are in the range 2.22507e-308 to 1.79769e+308.
+
+The large range comes at the cost of decreased precision though.
+
+64bit long in contrast has a simple encoding, it is represented as a string of bits in the binary numeral system. These can range from −2^63 to 2^63 − 1 in the signed case. Or from 0 to 2^64 -1 in the unsigned case.
+
+Note that 'long' may imply either 32 bit or 64 bit depending on the context. Im assuming you mean 64bit long here.
+
 ## Numeric Ranges and Precisions
 
 Because numbers are represented in the computer with a limited number of digits, they cannot represent arbitrary integer or floating-point numbers.  All data type have a limited range. 
