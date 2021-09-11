@@ -427,7 +427,7 @@ Operators are symbols that triggers an action when applied to variables and othe
 </th>
 <td style="border-bottom-style: none"> <code>a?b:c</code>
 </td>
-<td style="border-bottom-style: none"> <a href="https://en.cppreference.com/w/cpp/language/operator_other#Conditional_operator" title="cpp/language/operator other">Ternary conditional</a><sup id="cite_ref-2" class="reference"><a href="#cite_note-2">[note 2]</a></sup>
+<td style="border-bottom-style: none"> <a href="https://en.cppreference.com/w/cpp/language/operator_other#Conditional_operator" title="cpp/language/operator other">Ternary conditional</a>
 </td>
 <td style="vertical-align: top" rowspan="8"> Right-to-left
 </td></tr>
