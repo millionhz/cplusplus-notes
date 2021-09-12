@@ -193,6 +193,8 @@ Operators are symbols that triggers an action when applied to variables and othe
 
 ### Bitwise Operators
 
+Used on the **bits** of data.
+
 | Operator | Description |
 | :--: | :--: |
 | << | Binary Left Shift Operator |
@@ -229,6 +231,80 @@ Operators are symbols that triggers an action when applied to variables and othe
 | & | Returns the address of a memory location |
 | * | Pointer to a variable |
 | ? : | Conditional Expression |
+
+
+
+## The MOD (%) operator
+
+Modulus ( % ) gives us the remainder i.e. 5 % 2 = 1
+
+
+### Separating Digits Using MOD (%)
+
+```cpp
+// Separating Last 4 Digits
+int roll_number = 24100192; 
+
+// THIS MULTIPLICATION IS VERY IMPORTANT
+roll_number = roll_number % ((roll_number / 10000)*10000); 
+
+cout << roll_number << endl;
+// Output: 192
+```
+
+### MOD Separation Error
+
+```cpp
+// Separate Last 2 Character (i.e. Answer = 22)
+
+int a = 222;
+a = a % (a / 100); // Without Multiplication
+cout << a << endl;
+// Output: 0
+a = 222;
+a = a % ((a / 100)*100); // With Multiplication
+cout << a << endl;
+// Output: 22
+
+// SO MAKE SURE YOU MULTIPLY
+```
+
+## The Division operator ( / ) (C++ specific)
+
+Division ( / ) usually return the quotient value, or in other words if used with integers, will give answer in integers too i.e. 5 / 2 = 2.
+
+If you want the result in decimal form you can do:
+
+1. `5 / 2.0`
+2. `(double)5 / 2` i.e. type casting
+3. `double a = 5, b = 2, c; c = a / b` i.e. division on decimal defined values
+
+## Increment and Decrement Operator
+
+```cpp
+++x; // increment first or pre increment
+x++; // increment later ot post increment
+
+// Example 1
+x = 3;
+y = ++x;
+// x contains 4, y contains 4
+
+// Example 2
+x = 3;
+y = x++;
+// x contains 4, y contains 3
+
+// Example 3 
+x = 1;
+y = x++ + 1;
+// x contains 2, y contains 2
+
+```
+
+## The sizeof() operator
+
+[Discussed here](#sizeof)
 
 
 ## Operator Precedence
@@ -478,47 +554,6 @@ Operators are symbols that triggers an action when applied to variables and othe
 
 [Source](https://en.cppreference.com/w/cpp/language/operator_precedence)
 
-## The MOD (%) operator
-
-Modulus ( % ) gives us the remainder i.e. 5 % 2 = 1
-
-
-### Separating Digits Using MOD (%)
-
-```cpp
-// Separating Last 4 Digits
-int roll_number = 24100192; 
-
-// THIS MULTIPLICATION IS VERY IMPORTANT
-roll_number = roll_number % ((roll_number / 10000)*10000); 
-
-cout << roll_number << endl;
-// Output: 192
-```
-
-### MOD Separation Error
-
-```cpp
-// Separate Last 2 Character (i.e. Answer = 22)
-
-int a = 222;
-a = a % (a / 100); // Without Multiplication
-cout << a << endl;
-// Output: 0
-a = 222;
-a = a % ((a / 100)*100); // With Multiplication
-cout << a << endl;
-// Output: 22
-
-// SO MAKE SURE YOU MULTIPLY
-```
-
-## Division operator ( / ) in C++
-
-Division ( / ) if used with integers, will give answer in integers too i.e. 5 / 2 = 2
-
-If you want a float you can do: 5 / 2.0 = 2.5
-
 
 ## Punctuators
 
@@ -531,7 +566,9 @@ If you want a float you can do: 5 / 2.0 = 2.5
 | Constants | ALL_CAPS, ALLCAPS |
 | Variables | all_small, allsmall |
 | Functions | firstSmallRestCamelCase |
+| Classes | CamelCase |
 
+[Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html#Naming)
 
 # Variable
 
@@ -631,13 +668,15 @@ The large range comes at the cost of decreased precision though.
 
 Note that 'long' may imply either 32 bit or 64 bit depending on the context. Im assuming you mean 64bit long here.
 
-## Numeric Ranges and Precisions
+## Numeric Ranges, Precisions and Overflows
 
 Because numbers are represented in the computer with a limited number of digits, they cannot represent arbitrary integer or floating-point numbers.  All data type have a limited range. 
 
-If a computation yields a value that is outside the `int` range, the result **overflows**, and the program usually displays the either 0 or the max value that can be stored in that datatype. (In situations such as this, you can switch to double values.)
+If a computation yields a value that is outside the `int` range, the variable will **overflow**. 
 
-For floating-points, a compute can not store the exact value of a fraction and can only store a close approximation. This is called **Roundoff Error**. How precise that approximation, depends on the size of the data type.
+If a variable is currently at the highest possible value it can store, and you add 1 to it, it will cycle back to the smallest possible value.
+
+For floating-points, a computer can not store the exact value of a fraction and can only store a close approximation. This is called **Roundoff Error**. How precise that approximation, depends on the size of the data type.
 
 ## Calculating range of a 32bit integer
 
@@ -657,7 +696,7 @@ $$-\frac{2^{32}}{2} \iff 0 \iff \frac{2^{32}}{2}-1$$
 
 $$-2147483648 \iff 0 \iff 2147483647$$
 ```
-> 0 is also a positive number and we write it separately and subtract 1 from the total number of positive integers
+> 0 is considered a positive number. Thus, 1 is subtracted from the total number of positive integers when calculating total range of positive numbers.
 
 ## Storing floats in int
 
@@ -667,6 +706,13 @@ int x = 2.7523532425;
 // x = 2
 int x = 2.023532425; 
 // x = 2
+```
+
+## Defining a float variable
+
+```cpp
+float = 2.45f;
+// the f at the end is necessary, else the compiler will change the float to a double
 ```
 
 # sizeof()
@@ -703,28 +749,6 @@ Size of wchar_t : 4
 */
 ```
 
-# Increment and Decrement Operator
-
-```cpp
-++x; // increment first
-x++; // increment later
-
-// Example 1
-x = 3;
-y = ++x;
-// x contains 4, y contains 4
-
-// Example 2
-x = 3;
-y = x++;
-// x contains 4, y contains 3
-
-// Example 3 
-x = 1;
-y = x++ + 1;
-// x contains 2, y contains 2
-
-```
 
 # static_cast()
 
@@ -859,30 +883,42 @@ string name = fname + lname;
 String literal is the raw string value like "hello".
 
 Remember: Two string literals can not be concatenated.
-However, a string literal can be concatenated with a variable with a string\char datatype.
+However, a string literal can be concatenated with a variable with a string\char data type.
 
 ## String Functions
 
 ![data/Untitled%209.png](data/Image11.png)
 
+# Comparison Operators
+
+![data/Untitled%2010.png](data/Image12.png)
+
+## Comparison Examples
+
+![data/Untitled%2011.png](data/Image13.png)
+
 
 # If Else statement
 
 ```cpp
-if( a < 20 ) {
-      // if condition is true then print the following
-      cout << "a is less than 20;" << endl;
-   }
+if ( a < 20 ) 
+{
+  // if condition is true then print the following
+  cout << "a is less than 20;" << endl;
+}
+else if ( a > 30)
+{
+  cout << "a is more than 30;" << endl;
+}
+else
+{
+  cout << "a is between 20 and 30;" << endl;
+}
+
+
 // if you have only one statement after if you can skip the {}
 if ( 5 < 10 )
   cout<<"Five is now less than ten, that's a big surprise";
-```
-
-## Selection operator
-
-```cpp
-//condition ? true value : false value
-actual_floor = floor > 13 ? floor - 1 : floor;
 ```
 
 ## Dangling Else
@@ -899,12 +935,25 @@ else //this else belongs to if(x > 2)
 }
 ```
 
-# Comparison Operators
+## Dynamic Declaration (C++17)
 
-![data/Untitled%2010.png](data/Image12.png)
+```cpp
+if (int k = 5; k < 10)
+{
+  // k will only be useable inside 'the if' code block
+}
+
+```
+
+# Conditional operator
+
+```cpp
+//condition ? true value : false value
+actual_floor = floor > 13 ? floor - 1 : floor;
+```
 
 
-# Optimization while performing comparisons
+# Optimization while performing comparisons (Short Circuit)
 
 C++ optimizes the comparisons by only running half of the comparisons. 
 
@@ -934,10 +983,6 @@ no() || yes(); // output: noyes
 yes() || yes(); // output: yes
 }
 ```
-
-# Comparison Examples
-
-![data/Untitled%2011.png](data/Image13.png)
 
 # De Morgan's Law
 
@@ -992,6 +1037,30 @@ The easier way to look at it is to just use the ASCII table for comparisons. The
 
 Also, longer words have a value higher than lower words.
 
+# Switch Statement
+
+```cpp
+int digit = 4;
+string digit_name;
+
+switch (digit)
+{
+ case 1: digit_name = "one"; break; // if digit == 1
+ case 2: digit_name = "two"; break;
+ case 3: digit_name = "three"; break;
+ case 4: digit_name = "four"; break;
+ case 5: digit_name = "five"; break;
+ case 6: digit_name = "six"; break;
+ case 7: digit_name = "seven"; break;
+ case 8: digit_name = "eight"; break;
+ case 9: digit_name = "nine"; break;
+ default: digit_name = ""; break;
+}
+
+cout << digit_name << endl;
+// four
+```
+
 
 # Flowcharts Basic
 
@@ -1022,24 +1091,6 @@ else cout << "This is not a prime number";
 ![data/Untitled%2013.png](data/Image15.png)
 
 
-# Switch Statement
-
-```cpp
-switch (digit)
-{
- case 1: digit_name = "one"; break; // if digit == 1
- case 2: digit_name = "two"; break;
- case 3: digit_name = "three"; break;
- case 4: digit_name = "four"; break;
- case 5: digit_name = "five"; break;
- case 6: digit_name = "six"; break;
- case 7: digit_name = "seven"; break;
- case 8: digit_name = "eight"; break;
- case 9: digit_name = "nine"; break;
- default: digit_name = ""; break; // it is better to include a default case
-}
-```
-
 # cin.fail()
 
 `cin.fail()` is used for Input Validation. Below is an example implementation:
@@ -1059,12 +1110,50 @@ if (cin.fail())
 }
 ```
 
+# Clearing Input Failure State
+
+When an input operation has failed, all further input operations also fail. If you want to read two number sequences and use a letter as a sentinel, you need to clear the failure state after reading the first sentinel. Call the `cin.clear()` function.
+
+```cpp
+int values;
+cout << "Enter values, Q to quit.\n";
+while (cin >> values)
+{
+	// Process input.
+}
+cin.clear(); // removes errror flag
+
+// Suppose the user has entered 30 10 5 Q. 
+// The input of Q has caused the failure. Because 
+// only successfully processed characters are 
+// removed from the input, the Q character is 
+// still present. Read it into a dummy variable.
+
+string sentinel;
+getline(cin, sentinel); // inplace of this you can also use cin.ignore(1000, '\n');
+
+// every input after this will work fine
+```
+
+The `cin.clear()` clears the **error flag** on cin so that future I/O operations will work correctly.
+
+NOTE: `cin.clear()` and storing the cin's data in a dummy variable have separate purposes. Also see `cin.ignore()` and `cin.flush()`.
+
+[ios::clear - C++ Reference](http://www.cplusplus.com/reference/ios/ios/clear/)
+
+[istream::ignore - C++ Reference](http://www.cplusplus.com/reference/istream/istream/ignore/)
+
+
 # Enumerations
 
 [Enums - Youtube](https://www.youtube.com/watch?v=x55jfOd5PEE)
 
 ```cpp
 enum Colors {RED , ORANGE, BLUE};
+
+// RED = 0
+// ORANGE = 1
+// BLUE = 2
 
 Colors mycolor = RED;
 int x = 0;
@@ -1073,6 +1162,30 @@ if ((Colors)x == mycolor)
   cout << "mycolor is RED" << endl;
 else
   cout << "mycolor is not RED" << endl;
+```
+
+You can also force indexed:
+
+```cpp
+enum Colors {RED=1 , ORANGE, BLUE};
+// RED = 1
+// ORANGE = 2
+// BLUE = 3
+```
+
+# Typedef
+
+Used to create user-defined data types. 
+
+With `typedef` you can rename a primitive data types to improve code readability.
+
+```cpp
+typedef int age;
+// defining a new data type age, which is actually int at its core
+
+age a1 = 16;
+age a2 = 18;
+// you can use the custom datatype just like any other primitive data type
 ```
 
 # While Loop
@@ -1171,41 +1284,6 @@ while (x > 0); // condition
 # `break` and `continue`
 
 `break` statement breaks the loop while the `continue` statement goes to the next iteration o the loop.
-
-
-# Clearing Input Failure State
-
-When an input operation has failed, all further input operations also fail. If you want to read two number sequences and use a letter as a sentinel, you need to clear the failure state after reading the first sentinel. Call the `cin.clear()` function.
-
-```cpp
-int values;
-cout << "Enter values, Q to quit.\n";
-while (cin >> values)
-{
-	// Process input.
-}
-cin.clear(); // removes errror flag
-
-// Suppose the user has entered 30 10 5 Q. 
-// The input of Q has caused the failure. Because 
-// only successfully processed characters are 
-// removed from the input, the Q character is 
-// still present. Read it into a dummy variable.
-
-string sentinel;
-getline(cin, sentinel); // inplace of this you can also use cin.ignore(1000, '\n');
-
-// every input after this will work fine
-```
-
-The `cin.clear()` clears the **error flag** on cin so that future I/O operations will work correctly.
-
-NOTE: `cin.clear()` and storing the cin's data in a dummy variable have separate purposes. Also see `cin.ignore()` and `cin.flush()`.
-
-[ios::clear - C++ Reference](http://www.cplusplus.com/reference/ios/ios/clear/)
-
-[istream::ignore - C++ Reference](http://www.cplusplus.com/reference/istream/istream/ignore/)
-
 
 # Random Numbers
 
