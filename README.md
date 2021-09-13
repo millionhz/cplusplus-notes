@@ -142,7 +142,25 @@ Keywords are pre-defined or reserved words in a programming language. Each keywo
 
 ## Literals
 
-![data/Untitled%204.png](data/Image5.png)
+<!-- ![data/Untitled%204.png](data/Image5.png) -->
+
+### Decimal (Base 10)
+  - Integer constant (eg: 25, -64, 0)
+  - Floating point constant (eg: 2.34, -9.12, 1.2E10)
+
+### Octal (Base 8)
+  - Must begin with '0' (eg -12, 056)
+
+### Hexadecimal (Base 16)
+  - Must begin with '0x' (eg: 0x123)
+
+### Character constant
+  - Must be written with single quotes (eg: 'A', '$')
+
+### String constant
+  - Must be written with double quotes (eg: "LUMS")
+  - Strings always end with a `\0` delimiter
+
 
 ### Literal vs Identifier (informal)
 Literal is the **raw value** and identifier is the **name** of the variable or constant in which that raw value is stored.
