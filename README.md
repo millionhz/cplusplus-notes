@@ -22,7 +22,7 @@ A linker takes your machine code and the necessary parts from the C++ library an
 
 ![](data/Image1.png)
 
-## C++ skeleton code:
+## C++ skeleton code
 
 ```cpp
 #include <iostream> //Preprocessor directive
@@ -45,8 +45,7 @@ int main()
 | Object File | .obj | File containing object code. |
 | Executable | .exe | Executable binary file. |
 
-
-### What is object code? 
+### What is object code?
 
 Object code is a portion of machine code that has not yet been linked into a complete program.
 
@@ -62,7 +61,6 @@ Object code is a portion of machine code that has not yet been linked into a com
 | \# | Preprocessor Directive |
 | iostream | Header file provided by the C/C++ language for input/output processing |
 | <> | Means that this file is available in a predefined directory |
-
 
 ## Escape Sequence
 
@@ -121,11 +119,10 @@ The C++ compiler recognizes these kinds of tokens:
 - Punctuators
 - Other Separators
 
-[C++ Tokens | Keywords, Identifiers, Literals, Punctuators, Operators](http://www.cppforschool.com/tutorial/basic.html)
+[C++ Tokens | Keywords, Identifiers, Literals, Punctuators, Operators - cppforschool](http://www.cppforschool.com/tutorial/basic.html)
 
 [C/C++ Tokens - GeeksforGeeks](https://www.geeksforgeeks.org/cc-tokens/)
 
-[C/C++ Tokens - TutorialsPoint](https://www.tutorialspoint.com/c-cplusplus-tokens)
 
 ## Identifiers
 
@@ -232,82 +229,7 @@ Used on the **bits** of data.
 | * | Pointer to a variable |
 | ? : | Conditional Expression |
 
-
-
-## The MOD (%) operator
-
-Modulus ( % ) gives us the remainder i.e. 5 % 2 = 1
-
-
-### Separating Digits Using MOD (%)
-
-```cpp
-// Separating Last 4 Digits
-int roll_number = 24100192; 
-
-// THIS MULTIPLICATION IS VERY IMPORTANT
-roll_number = roll_number % ((roll_number / 10000)*10000); 
-
-cout << roll_number << endl;
-// Output: 192
-```
-
-### MOD Separation Error
-
-```cpp
-// Separate Last 2 Character (i.e. Answer = 22)
-
-int a = 222;
-a = a % (a / 100); // Without Multiplication
-cout << a << endl;
-// Output: 0
-a = 222;
-a = a % ((a / 100)*100); // With Multiplication
-cout << a << endl;
-// Output: 22
-
-// SO MAKE SURE YOU MULTIPLY
-```
-
-## The Division operator ( / ) (C++ specific)
-
-Division ( / ) usually return the quotient value, or in other words if used with integers, will give answer in integers too i.e. 5 / 2 = 2.
-
-If you want the result in decimal form you can do:
-
-1. `5 / 2.0`
-2. `(double)5 / 2` i.e. type casting
-3. `double a = 5, b = 2, c; c = a / b` i.e. division on decimal defined values
-
-## Increment and Decrement Operator
-
-```cpp
-++x; // increment first or pre increment
-x++; // increment later ot post increment
-
-// Example 1
-x = 3;
-y = ++x;
-// x contains 4, y contains 4
-
-// Example 2
-x = 3;
-y = x++;
-// x contains 4, y contains 3
-
-// Example 3 
-x = 1;
-y = x++ + 1;
-// x contains 2, y contains 2
-
-```
-
-## The sizeof() operator
-
-[Discussed here](#sizeof)
-
-
-## Operator Precedence
+### Operator Precedence
 
 <!-- ![data/Untitled%205.png](data/Image6.png) -->
 
@@ -558,6 +480,81 @@ y = x++ + 1;
 ## Punctuators
 
 ![data/Screenshot_(49).png](data/Image7.png)
+
+# Some useful operators
+
+## The MOD (%) operator
+
+Modulus ( % ) gives us the remainder i.e. 5 % 2 = 1
+
+
+### Separating Digits Using MOD (%)
+
+```cpp
+// Separating Last 4 Digits
+int roll_number = 24100192; 
+
+// THIS MULTIPLICATION IS VERY IMPORTANT
+roll_number = roll_number % ((roll_number / 10000)*10000); 
+
+cout << roll_number << endl;
+// Output: 192
+```
+
+### MOD Separation Error
+
+```cpp
+// Separate Last 2 Character (i.e. Answer = 22)
+
+int a = 222;
+a = a % (a / 100); // Without Multiplication
+cout << a << endl;
+// Output: 0
+a = 222;
+a = a % ((a / 100)*100); // With Multiplication
+cout << a << endl;
+// Output: 22
+
+// SO MAKE SURE YOU MULTIPLY
+```
+
+## The Division operator ( / ) (C++ specific)
+
+Division ( / ) usually return the quotient value, or in other words if used with integers, will give answer in integers too i.e. 5 / 2 = 2.
+
+If you want the result in decimal form you can do:
+
+1. `5 / 2.0`
+2. `(double)5 / 2` i.e. type casting
+3. `double a = 5, b = 2, c; c = a / b` i.e. division on decimal defined values
+
+## Increment and Decrement Operator
+
+```cpp
+++x; // increment first or pre increment
+x++; // increment later ot post increment
+
+// Example 1
+x = 3;
+y = ++x;
+// x contains 4, y contains 4
+
+// Example 2
+x = 3;
+y = x++;
+// x contains 4, y contains 3
+
+// Example 3 
+x = 1;
+y = x++ + 1;
+// x contains 2, y contains 2
+
+```
+
+## The sizeof() operator
+
+[Discussed here](#sizeof)
+
 
 # Naming Convention for C++
 
@@ -1840,16 +1837,42 @@ int main()
 // [2, 3, 5, 6, 3]
 ```
 
-# Char Pointers & C-Strings
+# Char Pointers (C-Strings)
 
-C++ uses a technique of storing strings called C-Strings, which was used in the C language. 
+C language stores strings in `char*` which are quite similar to `char[]`. A string stored in a char* is called a 'c-string'. `string.h` is used to work with c-strings.
 
-In C++, the strings are stored in arrays or char pointers of characters i.e. each index contains a character of the string (first index containing the first character of the string).
+A c-string can be declared with the following command: 
+```cpp
+const char* string = "Harry";
+//The `char*` must be a constant.
+```
 
-A string can be declared in the c-style with the following command:
-`const char* char_pointer = "Harry";`
+C++ uses the `string` datatype to store strings.
 
-The string is declared as `const` because you are not supposed to modify a literal string.
+> If you are programming in c++, it is recommended to not use c-string (or any c function).
+
+
+## char[] and char* and strings
+
+[char* vs std:string vs char[] in C++ - GeeksForGeeks](https://www.geeksforgeeks.org/char-vs-stdstring-vs-char-c/)
+
+[Difference between char and char* in c - StackExchange](https://cs50.stackexchange.com/questions/8899/difference-between-char-and-char-in-c)
+
+In the backend a `char*` is:
+  - `char[]` in C
+  - `const char[]` in C++
+
+A weird behavior of char*:
+```cpp
+/*  Will work */
+const char backend_char_array[] = "abc";
+const char *c = backend_char_array;
+c = "Lorem ipsum dolor sit amet";
+
+/*  Will give error */
+char char_arr[] = "abc";
+char_arr = "Lorem";
+```
 
 ## Null Terminator
 
@@ -1881,29 +1904,6 @@ int main()
 // 5
 ```
 
-## Character Array
-
-A literal string such as "Harry" is a constant. You are not allowed to modify its characters (THATS A C\C++ RULE). If you want to modify the characters in a string, define a character array instead.
-
-```cpp
-char char_array[] = "Harry"; // An array of 6 characters
-char_array[0] = 'L';
-```
-
-However you can change the value of char pointer but it is not recommended:
-
-```cpp
-char *s  = "Id say";
-cout << s << endl;
-s = "dont do this";
-cout << s << endl;
-```
-
-## Char array and char pointers and strings
-
-[char* vs std:string vs char[] in C++](https://www.geeksforgeeks.org/char-vs-stdstring-vs-char-c/)
-
-[Difference between char and char* in c](https://cs50.stackexchange.com/questions/8899/difference-between-char-and-char-in-c)
 
 # C++ strings and the [] Operator
 
