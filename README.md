@@ -729,6 +729,9 @@ float = 2.45f;
 // the f at the end is necessary, else the compiler will change the float to a double
 ```
 
+# `auto` Data Type
+
+[auto cpp - Microsoft](https://docs.microsoft.com/en-us/cpp/cpp/auto-cpp)
 
 # sizeof()
 
@@ -1285,7 +1288,7 @@ for (; ;)
 
 # Foreach loop
 
-[Discussed Here]()
+[Discussed Here](https://github.com/millionhz/cplusplus-notes#foreach-loop)
 
 # Do While Loop
 
@@ -1623,6 +1626,44 @@ cout << size << endl;
 // 4
 ```
 
+# Foreach Loop
+
+Foreach loop iterators over an array.
+
+The number of times the loop runs, depends on the size of the array being iterated.
+
+```cpp
+int arr[] = {1, 2, 3, 4, 5};
+
+// arr: iterable
+// x: iterating variable
+
+for(int x: arr)
+{
+  cout << x << endl;
+}
+cout << endl;
+
+/*
+12345
+*/
+```
+
+## Foreach loops with reference parameters (&) 
+
+If you modify the values of an array using foreach. You must declare the iterating variable with a '&' sign.
+
+```cpp
+int arr[] = {1, 2, 3, 4, 5};
+
+for(int &x: arr)
+{
+  x++;
+}
+
+//arr: {2, 3, 4, 5, 6}
+```
+
 # Arrays and Functions
 
 In order to work with arrays, you need to pass the size of the array also.
@@ -1656,18 +1697,6 @@ If the implementation of the function tries to modify the array, the compiler is
 
 # Common Array Algorithms
 
-## Filling an array
-
-```cpp
-const int SIZE = 5;
-int squares[SIZE];
-
-for(int i = 0; i < SIZE; i++)
-{
-  squares[i] = i * i;
-}
-```
-
 ## Filling an array with user inputs
 
 ```cpp
@@ -1680,7 +1709,7 @@ for(int i = 0; i < SIZE; i++)
 }
 ```
 
-## Copying a reversed array
+## Making the reverse of an array
 
 ```cpp
 const int SIZE = 5;
@@ -1698,78 +1727,18 @@ reversed_arr: 5   4   3   2   1
 */
 ```
 
-## Removing an element
-
-```cpp
-int removeElement(int arr[], int size, int index)
-{
-  for (int  i = index; i <= size-1; i++)
-  {
-    arr[i] = arr[index + 1];
-  }
-  arr[size-1] = -1;
-  return size - 1; // its better to return the new size
-}
-
-int main()
-{
-const int SIZE = 5;
-int arr[SIZE] = {1, 2, 3, 4, 5};
-
-removeElement(arr, SIZE, 3);
-}
-
-/*
-Output:
-arr: 1   2   3   5   -1
-*/
-```
-
-## Inserting an element
-
-```cpp
-int insertElement(int arr[], int size, int index, int value)
-{
-	if (index >= 0 && index < size) // it is better to have a condition that checks index
-	{
-	  for(int i = size - 1; i > index ; i--)
-	  {
-	    arr[i] = arr [i - 1];
-	  }
-	  arr[index] = value;
-	  return size + 1;
-	}
-	else
-	{
-		return size;
-	}
-}
-
-int main()
-{
-const int SIZE = 10;
-int arr[SIZE] = {1, 2, 3, 4, 5};
-
-insertElement(arr, SIZE, 2, 345);
-}
-/*
-Output:
-arr: 1   2   345 3   4   5   0   0   0   0
-*/
-```
-
 ## Sorting an array (my algorithm)
 
 ```cpp
 void sort(int arr[], int size)
 {
-	int temp = 0;
+  int temp = 0;
   for(int i = 0; i < size-1; i++)
   {
     if(arr[i] > arr[i+1])
       {
-	       temp = arr[i];
-	       arr[i] = arr[i+1];
+         temp = arr[i];
+         arr[i] = arr[i+1];
          arr[i+1] = temp;
          i = -1; //reset
       }
@@ -1793,6 +1762,10 @@ arr: -32 -1  15  33  454
 
 [Selection Sort - GeeksforGeeks](https://www.geeksforgeeks.org/selection-sort/)
 
+## Linear Search
+
+[Linear Search - GeeksforGeeks](https://www.geeksforgeeks.org/linear-search/)
+
 ## Binary Search
 
 [Binary Search - GeeksforGeeks](https://www.geeksforgeeks.org/binary-search/)
@@ -1804,7 +1777,7 @@ arr: -32 -1  15  33  454
 
 ## Multiplication of matrices (Example)
 
-[C++ Program to Multiply Two Matrix Using Multi-dimensional Arrays](https://www.programiz.com/cpp-programming/examples/matrix-multiplication)
+[C++ Program to Multiply Two Matrix Using Multi-dimensional Arrays - Programiz](https://www.programiz.com/cpp-programming/examples/matrix-multiplication)
 
 
 # Pointers
