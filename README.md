@@ -499,42 +499,7 @@ Used on the **bits** of data.
 
 ![data/Screenshot_(49).png](data/Image7.png)
 
-# Some useful operators
-
-## The MOD (%) operator
-
-Modulus ( % ) gives us the remainder i.e. 5 % 2 = 1
-
-
-### Separating Digits Using MOD (%)
-
-```cpp
-// Separating Last 4 Digits
-int roll_number = 24100192; 
-
-// THIS MULTIPLICATION IS VERY IMPORTANT
-roll_number = roll_number % ((roll_number / 10000)*10000); 
-
-cout << roll_number << endl;
-// Output: 192
-```
-
-### MOD Separation Error
-
-```cpp
-// Separate Last 2 Character (i.e. Answer = 22)
-
-int a = 222;
-a = a % (a / 100); // Without Multiplication
-cout << a << endl;
-// Output: 0
-a = 222;
-a = a % ((a / 100)*100); // With Multiplication
-cout << a << endl;
-// Output: 22
-
-// SO MAKE SURE YOU MULTIPLY
-```
+# Extra info on some important operators
 
 ## The Division operator ( / ) (C++ specific)
 
@@ -545,6 +510,34 @@ If you want the result in decimal form you can do:
 1. `5 / 2.0`
 2. `(double)5 / 2` i.e. type casting
 3. `double a = 5, b = 2, c; c = a / b` i.e. division on decimal defined values
+
+## The MOD (%) operator
+
+Modulus ( % ) gives us the remainder i.e. 5 % 2 = 1
+
+
+## Separating numbers using MOD and Division
+
+```cpp
+// Separate Last 2 Character
+
+int a = 428;
+a = a % 100;
+
+cout << a << endl;
+// Output: 28
+```
+
+```cpp
+// Separate First 2 Character
+
+int a = 938;
+a = a / 10;
+
+cout << a << endl;
+// Output: 93
+```
+
 
 ## Increment and Decrement Operator
 
@@ -723,12 +716,19 @@ int x = 2.023532425;
 // x = 2
 ```
 
-## Defining a float variable
+## Floating Point Literals
+
+[floating literal - cppreference](https://en.cppreference.com/w/cpp/language/floating_literal)
+
+## Declaring a float variable explicitly
+
+Floats are not usually used nowadays but if you want to explicitly use a float, declare it with a `f` suffix.
 
 ```cpp
 float = 2.45f;
 // the f at the end is necessary, else the compiler will change the float to a double
 ```
+
 
 # sizeof()
 
@@ -1223,17 +1223,23 @@ age a2 = 18;
 ## Inner Workings of a for loop
 
 ```cpp
-// for (a, b ,c) { body }
+/*
+for (a, b ,c) { body }
 
-// 1. a will run at the start
-// 2. b will run
-// 3. loop body will run
-// 4. c will run
-// 5. b will run
-// 6. loop body will run
-// 7. c will run
-// 8. b will run
-// and so on..
+a : initialization
+b: condition
+c: updating
+
+1. a will run at the start
+2. b will run
+3. loop body will run
+4. c will run
+5. b will run
+6. loop body will run
+7. c will run
+8. b will run
+and so on..
+*/
 
 ```
 
@@ -1277,6 +1283,10 @@ for (; ;)
 // Output: 01234
 ```
 
+# Foreach loop
+
+[Discussed Here]()
+
 # Do While Loop
 
 Do While Loop is a modification of the While Loop.
@@ -1289,6 +1299,41 @@ do
  // statements
 }
 while (x > 0); // condition
+```
+
+# Some looping Algorithms
+
+## Reversing an integer
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+int reverseInteger(int n)
+{
+  int reversed = 0;
+
+  while(n > 0)
+  {
+    reversed = reversed*10 + (n % 10);
+    n /= 10;
+  }
+
+  return reversed;
+
+}
+
+int main()
+{
+  int n = 8421;
+
+  cout << reverseInteger(n) << endl;
+
+  return 0;
+}
+
+// output: 1248
 ```
 
 # Loop and a Half
@@ -1444,6 +1489,10 @@ int main()
 // Sum: 10
 ```
 
+## Arrays and Functions
+
+[Discussed Here](https://github.com/millionhz/cplusplus-notes#arrays-and-functions)
+
 # Variable Scope
 
 - A variable that is defined **within a function** is visible from the point at which it is defined until the end of the block in which it was defined. This area is called the scope of the variable.
@@ -1523,11 +1572,11 @@ int main()
 
 # Arrays
 
-Array is the collection of items of same type in contiguous memory.
+Array is the collection of items of same type in contiguous memory (stack).
 
-## Defining an Array
+## Declaring an Array
 
-The array size must be **constant**.
+**The array size must be constant.**
 
 ![data/Untitled%2021.png](data/Image23.png)
 
@@ -1547,7 +1596,9 @@ cout << sizeof(arr[0]) << endl; // 4
 
 ## Reading out of bound array
 
-If you try to print an out of bound index of an array, the compiler will **not complain,** it **will compile** but the **output** will be **unpredictable**.
+If you try to print an out of bound index of an array, the compiler will **not complain.** 
+
+The executable will be generated but the **output** will be **unpredictable**.
 
 ```cpp
 int arr[2] = {1, 2 };
@@ -1562,7 +1613,21 @@ Output:
 */
 ```
 
+`sizeof()` can be used to calculate the size (number of objects in array) of an already refined array.
+
+```cpp
+int arr[] = {1, 2, 3, 4};
+int size = sizeof(arr)/sizeof(int);
+// int size = sizeof(arr)/sizeof(arr[0]);
+cout << size << endl;
+// 4
+```
+
 # Arrays and Functions
+
+In order to work with arrays, you need to pass the size of the array also.
+
+Or the size can be calculated using the `sizeof()` operator in certain circumstances 
 
 ```cpp
 double sum(double values[], int size) // passing in size is important
@@ -1576,16 +1641,18 @@ double sum(double values[], int size) // passing in size is important
 }
 ```
 
-> Note that array parameters are always **reference parameters.**
+> Note that parameters of type array are always **reference parameters.**
 
 
 ## Constant Array Parameters
 
-When a function doesn’t modify an array parameter, it is considered a good style to add the `const` reserved word, like this:
+If a function doesn’t modify the values of an array parameter, it is considered a good idea to add the `const` reserved word:
 
 `double sum(const double values[], int size)`
 
-The `const` reserved word helps the reader of the code, making it clear that the function keeps the array elements unchanged. If the implementation of the function tries to modify the array, the compiler issues a warning.
+The `const` reserved word helps in the readability of the code, making it clear that the function keeps the elements of an array unchanged
+
+If the implementation of the function tries to modify the array, the compiler issues a warning.
 
 # Common Array Algorithms
 
