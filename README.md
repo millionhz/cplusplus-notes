@@ -1,5 +1,9 @@
 # C++ Notes
 
+## Other Resources
+
+[A Complete Guide toProgramming in C++](http://www.lmpt.univ-tours.fr/~volkov/C++.pdf)
+
 # C++ - The Basics
 
 C++ is a high level object-oriented programing language.
