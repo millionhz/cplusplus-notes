@@ -1397,7 +1397,11 @@ The whole idea of a function is to break down the program into smaller parts and
 
 ![data/Untitled%2020.png](data/Image22.png)
 
-## Ignoring return statement
+## `return` statement
+
+`return` statement terminated the code body and returns a value, if provided.
+
+## Ignoring return statement 
 
 Most compilers will issue a warning if a return statement is missed, but if you ignore the warning and the function is ever called, a **random quantity** will be returned. This could produce unpredictable behaviors.
 
@@ -1425,6 +1429,23 @@ To fix this, put the function declaration above the `main()`function, and put th
 
 A drawback: Whenever you change the name of a function or one of the parameter types, you need to fix it in both places: in the declaration and in the definition.
 
+## `void` functions
+
+`void` functions either do not return a value or return multiple values (with the use of `struct`).
+
+> You must use a return statement, without any value, at the end of a void function
+
+```cpp
+void print(string sentence)
+{
+  cout << sentence << endl;
+
+  return;
+}
+
+// return; important for termination
+```
+
 ## Function Comments
 
 You should describe your functions using comments.
@@ -1442,11 +1463,23 @@ double pyramidVolume(double height, double base_area)
 }
 ```
 
-## Void Functions & Procedures
+## Function Overloading
 
-Function that don't return a value are `void` functions. 
+It is essentially having multiple definitions of a function with different parameters, but **same return type**.
 
-Void functions are also called **procedures**.
+```cpp
+int add(int a, int b)
+{
+  return a + b;
+}
+
+int add(double a, double b)
+{
+  return a + b;
+}
+
+// same return type important
+```
 
 ## Reference Parameters
 
