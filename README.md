@@ -1503,32 +1503,80 @@ int main()
 
 [Function templates - cplusplus](https://www.cplusplus.com/doc/oldtutorial/templates/)
 
-## `&` and The Reference Parameters
+## Call by value
 
-If you want to write a function that changes the value of an argument, you must use a reference parameter (`&`) in order to allow the change.
-
-`&` in the parameter list extracts the addresses of the parameters passed to a function. In the function body, the value that these addresses point to is used.
+[Activation Record - stackoverflow](https://stackoverflow.com/questions/1266233/what-is-activation-record-in-the-context-of-c-and-c)
 
 ```cpp
-void increment(int& n)
+void swap(int a, int b)
 {
-  n++;
+  int temp = a;
+  a = b;
+  b = temp;
+  return;
 }
 
 int main()
 {
-  int num = 1;
-  cout << "Before: " << num << endl;
-  increment(num);
-  cout << "After: " << num << endl;
-
+  int a = 1;
+  int b = 9;
+  swap(a, b);
 }
-/*
-Output:
-Before: 1
-After: 2
-*/
+// Note: This function will not work
 ```
+
+For the program above the machine code for `main` and `swap` live **independently** in the memory.
+
+When main function reaches `swap` a new activation record is created and the value of `a` and `b` is copied into the new activation record. The `swap` function can only access the values in its activation record. At the end of the swap function the activation record is deleted.
+
+## Call by address
+
+```cpp
+void swap(int* a, int* b)
+{
+  int temp = *a;
+  *a = *b;
+  *b = temp;
+  return;
+}
+
+int main()
+{
+  int a = 1;
+  int b = 9;
+  swap(&a, &b);
+}
+```
+
+For the program above the machine code for `main` and `swap` live **independently** in the memory.
+
+When the `swap` function is called in `main`, instead of passing the value into the `swap` activation record we pass the address of `a` and `b`. This gives `swap` the ability to manipulate the values these addresses point to.
+
+## Call by reference
+
+```cpp
+void swap(int& a, int& b)
+{
+  int temp = a;
+  a = b;
+  b = temp;
+  return;
+}
+
+int main()
+{
+  int a = 1;
+  int b = 9;
+  swap(a, b);
+}
+```
+For the program above, at the time of compilation the machine code for `swap` is copied into the machine code of `main`. In other words the body of `swap` is copied into `main` at the time of compilation.
+
+In the cas eof call by reference, the activation frame of `swap` is the same as the activation frame of `main`.
+
+For this reason, call by reference is only used for simple functions. 
+
+Also:
 
 `&` can also be used to get the address of a specific variable.
 
@@ -1539,29 +1587,6 @@ cout << &x << endl;
 // 0x7ffe6c03214c
 ```
 
-## Constant References
-
-Using simple parameter variable is less efficient than using a reference parameter.
-
-With a reference parameter, only the location of the variable, not its value, needs to be transmitted to the function, thus making it more efficient.
-
-```cpp
-int sum(const int& a, const int& b) // Just add const
-{
-  return a+b;
-}
-
-int main()
-{
-  int num1 = 4;
-  int num2 = 6;
-  cout << "Sum: " << sum(num1, num2) << endl; 
-}
-
-// Output:
-// Sum: 10
-```
-
 ## Arrays and Functions
 
 [Discussed Here](https://github.com/millionhz/cplusplus-notes#arrays-and-functions)
@@ -1569,6 +1594,8 @@ int main()
 # Variable Scope
 
 A variable that is defined **within a function** is visible from the point at which it is defined until the end of the block in which it was defined. This area is called the scope of the variable.
+
+[Object Lifetime in C++ (Stack/Scope Lifetimes) - YouTube](https://www.youtube.com/watch?v=iNuTwvD6ciI)
 
 ## Global Variable vs Local Variable
 
@@ -1590,7 +1617,12 @@ int main()
 }
 ```
 
-> **DONT USE GLOBAL VARIABLES**
+Also check:
+
+[Scope resolution operator in C++ - GeeksforGeeks](https://www.geeksforgeeks.org/scope-resolution-operator-in-c/)
+
+
+> **DON'T USE GLOBAL VARIABLES**
 
 ## Other type of scopes
 
@@ -1622,7 +1654,7 @@ int main()
 
 Usually variables are destroyed after a code block finishes execution but if we define a variable, in that block, as static, it will not be destroyed.
 
-Static elements are allocated storage only once in a program lifetime in static storage area. And they have a scope till the program lifetime.
+Static elements are only created once and have a lifetime till the end of the program.
 
 ```cpp
 void counter()
