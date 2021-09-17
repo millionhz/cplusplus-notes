@@ -1393,18 +1393,6 @@ The whole idea of a function is to break down the program into smaller parts and
 
 ![data/Untitled%2019.png](data/Image21.png)
 
-## Flowchart representation of functions
-
-![data/Untitled%2020.png](data/Image22.png)
-
-## `return` statement
-
-`return` statement terminated the code body and returns a value, if provided.
-
-## Ignoring return statement 
-
-Most compilers will issue a warning if a return statement is missed, but if you ignore the warning and the function is ever called, a **random quantity** will be returned. This could produce unpredictable behaviors.
-
 ## Function Declaration vs Definition
 
 ```cpp
@@ -1428,6 +1416,15 @@ If you declare the define the function below the `main()` function, the compiler
 To fix this, put the function declaration above the `main()`function, and put the function definition after the `main()` function.
 
 A drawback: Whenever you change the name of a function or one of the parameter types, you need to fix it in both places: in the declaration and in the definition.
+
+<!--
+## Flowchart representation of functions
+![data/Untitled%2020.png](data/Image22.png)
+-->
+
+## `return` statement
+
+`return` statement **terminates** the code body and **returns** a value, if provided.
 
 ## `void` functions
 
@@ -1465,7 +1462,9 @@ double pyramidVolume(double height, double base_area)
 
 ## Function Overloading
 
-It is essentially having multiple definitions of a function with different parameters, but **same return type**.
+Function overloading is having multiple functions declarations with the **same name** but **different parameters**.
+
+You cannot overload function declarations that differ only by return type (the parameters must also differ).
 
 ```cpp
 int add(int a, int b)
@@ -1473,17 +1472,42 @@ int add(int a, int b)
   return a + b;
 }
 
-int add(double a, double b)
+int add(int a, int b, int c)
 {
-  return a + b;
+  return a + b + c;
 }
-
-// same return type important
 ```
 
-## Reference Parameters
+## Function Templates
+
+Generic functions (function with same body but different data types) can be turned into templates.
+
+```cpp
+// T can be any name
+template <class T>
+T maxim(T x, T y)
+{
+  return x>y ? x : y;
+}
+
+int main()
+{
+  cout << maxim(2, 5) << endl;
+  cout << maxim(1.4, 2.6) << endl;
+}
+
+// Output:
+// 5
+// 2.6
+```
+
+[Function templates - cplusplus](https://www.cplusplus.com/doc/oldtutorial/templates/)
+
+## `&` and The Reference Parameters
 
 If you want to write a function that changes the value of an argument, you must use a reference parameter (`&`) in order to allow the change.
+
+`&` in the parameter list extracts the addresses of the parameters passed to a function. In the function body, the value that these addresses point to is used.
 
 ```cpp
 void increment(int& n)
@@ -1506,11 +1530,20 @@ After: 2
 */
 ```
 
+`&` can also be used to get the address of a specific variable.
+
+```cpp
+int x = 1;
+cout << &x << endl;
+
+// 0x7ffe6c03214c
+```
+
 ## Constant References
 
 Using simple parameter variable is less efficient than using a reference parameter.
 
-With a reference parameter, only the location of the variable, not its value, needs to be transmitted to the function.
+With a reference parameter, only the location of the variable, not its value, needs to be transmitted to the function, thus making it more efficient.
 
 ```cpp
 int sum(const int& a, const int& b) // Just add const
@@ -1535,8 +1568,7 @@ int main()
 
 # Variable Scope
 
-- A variable that is defined **within a function** is visible from the point at which it is defined until the end of the block in which it was defined. This area is called the scope of the variable.
-- It is not legal to define two variables with the same name in the same scope.
+A variable that is defined **within a function** is visible from the point at which it is defined until the end of the block in which it was defined. This area is called the scope of the variable.
 
 ## Global Variable vs Local Variable
 
