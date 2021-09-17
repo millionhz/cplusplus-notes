@@ -1384,32 +1384,6 @@ for (int i = 0; i < 10; i++)
 }
 
 ```
-# Reference (`&`)
-
-`&` can also be used to get the address of a specific variable.
-
-```cpp
-int x = 1;
-cout << &x << endl;
-
-// 0x7ffe6c03214c
-```
-
-A reference of a variable is essentially that varaible but different name
-
-```cpp
-int i = 5;
-int& integer = i;
-
-cout << i << endl; // 5
-cout << integer << endl; // 5
-
-integer++;
-cout << i << endl; // 6
-
-```
-
-[C++ References - tutorialspoint](https://www.tutorialspoint.com/cplusplus/cpp_references.htm)
 
 # Functions
 
@@ -1697,6 +1671,33 @@ int main()
 // Output:
 // 01234
 ```
+
+# Reference (`&`)
+
+`&` can also be used to get the address of a specific variable.
+
+```cpp
+int x = 1;
+cout << &x << endl;
+
+// 0x7ffe6c03214c
+```
+
+A reference of a variable is essentially that varaible but different name
+
+```cpp
+int i = 5;
+int& integer = i;
+
+cout << i << endl; // 5
+cout << integer << endl; // 5
+
+integer++;
+cout << i << endl; // 6
+
+```
+
+[C++ References - tutorialspoint](https://www.tutorialspoint.com/cplusplus/cpp_references.htm)
 
 # Arrays
 
