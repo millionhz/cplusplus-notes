@@ -1384,6 +1384,32 @@ for (int i = 0; i < 10; i++)
 }
 
 ```
+# Reference (`&`)
+
+`&` can also be used to get the address of a specific variable.
+
+```cpp
+int x = 1;
+cout << &x << endl;
+
+// 0x7ffe6c03214c
+```
+
+A reference of a variable is essentially that varaible but different name
+
+```cpp
+int i = 5;
+int& integer = i;
+
+cout << i << endl; // 5
+cout << integer << endl; // 5
+
+integer++;
+cout << i << endl; // 6
+
+```
+
+[C++ References - tutorialspoint](https://www.tutorialspoint.com/cplusplus/cpp_references.htm)
 
 # Functions
 
@@ -1503,9 +1529,9 @@ int main()
 
 [Function templates - cplusplus](https://www.cplusplus.com/doc/oldtutorial/templates/)
 
-## Call by value
+[Templates in C++ - YouTube](https://www.youtube.com/watch?v=I-hZkUa9mIs)
 
-[Activation Record - stackoverflow](https://stackoverflow.com/questions/1266233/what-is-activation-record-in-the-context-of-c-and-c)
+## Call by value
 
 ```cpp
 void swap(int a, int b)
@@ -1527,7 +1553,7 @@ int main()
 
 For the program above the machine code for `main` and `swap` live **independently** in the memory.
 
-When main function reaches `swap` a new activation record is created and the value of `a` and `b` is copied into the new activation record. The `swap` function can only access the values in its activation record. At the end of the swap function the activation record is deleted.
+When main function reaches `swap` a new stack frame is created and the value of `a` and `b` is copied into the new stack frame. The `swap` function can only access the values in its stack frame. At the end of the swap function the stack frame is deleted.
 
 ## Call by address
 
@@ -1550,12 +1576,12 @@ int main()
 
 For the program above the machine code for `main` and `swap` live **independently** in the memory.
 
-When the `swap` function is called in `main`, instead of passing the value into the `swap` activation record we pass the address of `a` and `b`. This gives `swap` the ability to manipulate the values these addresses point to.
+When the `swap` function is called in `main`, instead of passing the value into the `swap` stack frame we pass the address of `a` and `b`. This gives `swap` the ability to manipulate the values these addresses point to.
 
 ## Call by reference
 
 ```cpp
-void swap(int& a, int& b)
+void swap(int &a, int &b)
 {
   int temp = a;
   a = b;
@@ -1576,20 +1602,19 @@ In the cas eof call by reference, the activation frame of `swap` is the same as 
 
 For this reason, call by reference is only used for simple functions. 
 
-Also:
-
-`&` can also be used to get the address of a specific variable.
-
-```cpp
-int x = 1;
-cout << &x << endl;
-
-// 0x7ffe6c03214c
-```
-
 ## Arrays and Functions
 
 [Discussed Here](https://github.com/millionhz/cplusplus-notes#arrays-and-functions)
+
+## Function Pointer
+
+# Stack Frame
+
+[Object Lifetime in C++ (Stack/Scope Lifetimes) - YouTube](https://www.youtube.com/watch?v=iNuTwvD6ciI)
+
+- In a stack, different stack frames are present on top of each other. In order to access a stack frame at the bottom, you will have to remove (pop) the stack frames above it.
+- Functions or Code Blocks are essentially stack frames.
+- Variable scopes can be describes using stack frames
 
 # Variable Scope
 
@@ -1648,7 +1673,6 @@ Also check:
 - Program scope:
 
     A variable which is only useable inside a program. 
-
 
 # Static Variables
 
@@ -1783,9 +1807,6 @@ double sum(double values[], int size) // passing in size is important
 }
 ```
 
-> Note that parameters of type array are always **reference parameters.**
-
-
 ## Constant Array Parameters
 
 If a function doesn’t modify the values of an array parameter, it is considered a good idea to add the `const` reserved word:
@@ -1883,6 +1904,11 @@ arr: -32 -1  15  33  454
 
 # Pointers
 
+- A variable used to store the address of some data.
+- References(`&`) are managed by the compiler but pointers are directly managed by the programmer.
+- A program can not access the heap directly. To use heap, it needs to make use of pointers. 
+
+
 [POINTERS in C++ - Youtube](https://www.youtube.com/watch?v=DTxHyVn0ODg)
 
 ![data/Untitled%2024.png](data/Image26.png)
@@ -1892,8 +1918,6 @@ int x = 1000; // a variable x storing the value 1000
 int* px = &x; // a pointer px storing the memory address of variable x
 ```
 
-References are managed by the compiler but pointers are directly managed by the programmer.
-
 ![data/Untitled%2025.png](data/Image27.png)
 
 ## Initializing a Pointer
@@ -1901,13 +1925,16 @@ References are managed by the compiler but pointers are directly managed by the 
 - When you initialize a pointer, be sure that the pointer and the memory address have the same type.
 - If you define a pointer variable without providing an initial variable, the pointer contains a random address. Using that random address is an error. To prevent this initialize a pointer with the value NULL : `int* px = NULL`
 
-## Pointer and Reference Parameters
-
-![data/Untitled%2026.png](data/Image28.png)
-
 ## Constant Pointers
 
-![data/Untitled%2027.png](data/Image29.png)
+You can not change the value of to which a constant pointer points to.
+
+```cpp
+int x = 0;
+const int* xp = &x;
+
+*xp = 3; //Error
+```
 
 # Array and pointers
 
@@ -1968,8 +1995,11 @@ int* p = arr;
 
 for(int i = 0 ;i < sizeof(arr)/sizeof(int); i++)
 {
-  cout << *(p+i) << endl;
+  cout << *(p+i);
 }
+cout << endl;
+
+// 12345
 ```
 
 ## Passing array to a function using pointers
@@ -2075,16 +2105,54 @@ word[0] = 'S';
 cout << word << endl; // SS100
 ```
 
-# Dynamic Memory Allocation
+# `new` | Dynamic Memory Allocation (Heap)
 
-The new operator allocates memory from the heap.  When you ask for a `new double` a storage location of type double is located on the heap, and a pointer to that location is returned.
+The `new` operator allocates memory from the heap.  When you ask for a `new double` a storage location of type double is assigned on the heap, and a pointer to that location is returned.
 
-You must reclaim dynamically allocated objects with the delete or delete[] operator or else you may face a memory leak.
+You must reclaim dynamically allocated objects with the `delete` or `delete[]` operator or else you may face a memory leak.
 
 ![data/Untitled%2029.png](data/Image31.png)
 
+After deleting the memory in heap, you need to delete the pointer by assigning it a value `nullptr`.
+
+Using a pointer pointing to a deleted memory space can cause bugs.
+
+```cpp
+int* value = new int;
+delete value;
+value = nullptr;
+```
+
+<!--![data/Untitled%2031.png](data/Image33.png)-->
+
+
+## Common Memory Allocation Problems
+
 ![data/Untitled%2030.png](data/Image32.png)
 
-## Dangling Pointers
+# Struct
 
-![data/Untitled%2031.png](data/Image33.png)
+[CLASSES vs STRUCTS in C++ - YouTube](https://www.youtube.com/watch?v=fLgTtaqqJp0)
+
+Structs are class like objects, whose records are public by default.
+
+```cpp
+struct Student
+{
+  string name;
+  int age;
+};
+
+int main()
+{
+
+  Student s1;
+  
+  s1.name = "Hamza";
+  s1.age = 19;
+
+  cout << s1.name << " is " << s1.age << " years old" << endl; 
+
+}
+
+```
