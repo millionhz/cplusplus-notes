@@ -1906,6 +1906,7 @@ arr: -32 -1  15  33  454
 
 [C++ Program to Multiply Two Matrix Using Multi-dimensional Arrays - Programiz](https://www.programiz.com/cpp-programming/examples/matrix-multiplication)
 
+[Passing a 2D array to a C++ function - StackOverflow](https://stackoverflow.com/questions/8767166/passing-a-2d-array-to-a-c-function)
 
 # Pointers
 
