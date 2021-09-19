@@ -1292,7 +1292,41 @@ for (; ;)
 
 # Foreach loop
 
-[Discussed Here](https://github.com/millionhz/cplusplus-notes#foreach-loop)
+Foreach loop iterators over an array.
+
+The number of times the loop runs, depends on the size of the array being iterated.
+
+```cpp
+int arr[] = {1, 2, 3, 4, 5};
+
+// arr: iterable
+// x: iterating variable
+
+for(int x: arr)
+{
+  cout << x << endl;
+}
+cout << endl;
+
+/*
+12345
+*/
+```
+
+## Foreach loops with reference parameters (&) 
+
+If you modify the values of an array using foreach. You must declare the iterating variable with a '&' sign.
+
+```cpp
+int arr[] = {1, 2, 3, 4, 5};
+
+for(int &x: arr)
+{
+  x++;
+}
+
+//arr: {2, 3, 4, 5, 6}
+```
 
 # Do While Loop
 
@@ -1752,49 +1786,11 @@ cout << size << endl;
 // 4
 ```
 
-# Foreach Loop
-
-Foreach loop iterators over an array.
-
-The number of times the loop runs, depends on the size of the array being iterated.
-
-```cpp
-int arr[] = {1, 2, 3, 4, 5};
-
-// arr: iterable
-// x: iterating variable
-
-for(int x: arr)
-{
-  cout << x << endl;
-}
-cout << endl;
-
-/*
-12345
-*/
-```
-
-## Foreach loops with reference parameters (&) 
-
-If you modify the values of an array using foreach. You must declare the iterating variable with a '&' sign.
-
-```cpp
-int arr[] = {1, 2, 3, 4, 5};
-
-for(int &x: arr)
-{
-  x++;
-}
-
-//arr: {2, 3, 4, 5, 6}
-```
-
 # Arrays and Functions
 
 In order to work with arrays, you need to pass the size of the array also.
 
-Or the size can be calculated using the `sizeof()` operator in certain circumstances 
+Or the size can be calculated using the `sizeof()` operator in certain circumstances.
 
 ```cpp
 double sum(double values[], int size) // passing in size is important
@@ -1807,6 +1803,14 @@ double sum(double values[], int size) // passing in size is important
  return total;
 }
 ```
+
+By default, only the **array pointer** is **passed** to the function i.e. `name_of_array[]` is actually a pointer to the array.
+
+The scope of the function treats the array as a pointer and thus **you can not** use things like **foreach loop on the array**.
+
+[C++ Passing Arrays to Functions - tutorialspoint](https://www.tutorialspoint.com/cplusplus/cpp_passing_arrays_to_functions.htm)
+
+[Passing an array by reference - StackOverflow](https://stackoverflow.com/questions/5724171/passing-an-array-by-reference)
 
 ## Constant Array Parameters
 
