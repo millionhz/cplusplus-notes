@@ -1616,6 +1616,11 @@ For this reason, call by reference is only used for simple functions.
 
 ## Function Pointer
 
+```cpp
+void (*func)() = myFunc;
+//declared func
+```
+
 # Stack Frame
 
 [Object Lifetime in C++ (Stack/Scope Lifetimes) - YouTube](https://www.youtube.com/watch?v=iNuTwvD6ciI)
@@ -1721,7 +1726,7 @@ A reference of a variable is essentially that varaible but different name
 
 ```cpp
 int i = 5;
-int& integer = i;
+int &integer = i;
 
 cout << i << endl; // 5
 cout << integer << endl; // 5
@@ -2111,7 +2116,7 @@ word[0] = 'S';
 cout << word << endl; // SS100
 ```
 
-# `new` | Dynamic Memory Allocation (Heap)
+# `new` & `delete` | Dynamic Memory Allocation (Heap)
 
 The `new` operator allocates memory from the heap.  When you ask for a `new double` a storage location of type double is assigned on the heap, and a pointer to that location is returned.
 
@@ -2132,7 +2137,11 @@ value = nullptr;
 <!--![data/Untitled%2031.png](data/Image33.png)-->
 
 
-## Common Memory Allocation Problems
+## Common Memory Allocation 
+
+- Uninitialized Pointers
+- Memory Leak
+- Dangling Pointers
 
 ![data/Untitled%2030.png](data/Image32.png)
 
