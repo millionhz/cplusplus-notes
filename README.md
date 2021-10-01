@@ -2,7 +2,7 @@
 
 ## Other Resources
 
-[A Complete Guide toProgramming in C++](http://www.lmpt.univ-tours.fr/~volkov/C++.pdf)
+[A Complete Guide to Programming in C++](http://www.lmpt.univ-tours.fr/~volkov/C++.pdf)
 
 # C++ - The Basics
 
@@ -42,12 +42,12 @@ int main()
 
 ## C++ File Types
 
-| File Type | File extension | Description |
-| --- | --- | --- |
-| Source code file | .cpp | Text file containing the c++ code. |
-| Header file | .h | Text file containing information about other code files. |
-| Object File | .obj | File containing object code. |
-| Executable | .exe | Executable binary file. |
+| File Type        | File extension | Description                                              |
+| ---------------- | -------------- | -------------------------------------------------------- |
+| Source code file | .cpp           | Text file containing the c++ code.                       |
+| Header file      | .h             | Text file containing information about other code files. |
+| Object File      | .obj           | File containing object code.                             |
+| Executable       | .exe           | Executable binary file.                                  |
 
 ### What is object code?
 
@@ -60,11 +60,11 @@ Object code is a portion of machine code that has not yet been linked into a com
 
 ### Explaining #include \<iostream\>
 
-| Symbol | Description |
-| :--: | :--: |
-| \# | Preprocessor Directive |
+| Symbol   | Description                                                            |
+|:--------:|:----------------------------------------------------------------------:|
+| \#       | Preprocessor Directive                                                 |
 | iostream | Header file provided by the C/C++ language for input/output processing |
-| <> | Means that this file is available in a predefined directory |
+| <>       | Means that this file is available in a predefined directory            |
 
 ## Escape Sequence
 
@@ -127,7 +127,6 @@ The C++ compiler recognizes these kinds of tokens:
 
 [C/C++ Tokens - GeeksforGeeks](https://www.geeksforgeeks.org/cc-tokens/)
 
-
 ## Identifiers
 
 Identifiers are used as the general terminology for naming of variables, functions and arrays. Identifier names must differ in **spelling** and **case** from any keywords. You cannot use keywords as identifiers; they are reserved for special use. Once declared, you can use the identifier in later program statements to refer to the associated value
@@ -149,24 +148,29 @@ Keywords are pre-defined or reserved words in a programming language. Each keywo
 <!-- ![data/Untitled%204.png](data/Image5.png) -->
 
 ### Decimal (Base 10)
-  - Integer constant (eg: 25, -64, 0)
-  - Floating point constant (eg: 2.34, -9.12, 1.2E10)
+
+- Integer constant (eg: 25, -64, 0)
+- Floating point constant (eg: 2.34, -9.12, 1.2E10)
 
 ### Octal (Base 8)
-  - Must begin with '0' (eg -12, 056)
+
+- Must begin with '0' (eg -12, 056)
 
 ### Hexadecimal (Base 16)
-  - Must begin with '0x' (eg: 0x123)
+
+- Must begin with '0x' (eg: 0x123)
 
 ### Character constant
-  - Must be written with single quotes (eg: 'A', '$')
+
+- Must be written with single quotes (eg: 'A', '$')
 
 ### String constant
-  - Must be written with double quotes (eg: "LUMS")
-  - Strings always end with a `\0` delimiter
 
+- Must be written with double quotes (eg: "LUMS")
+- Strings always end with a `\0` delimiter
 
 ### Literal vs Identifier (informal)
+
 Literal is the **raw value** and identifier is the **name** of the variable or constant in which that raw value is stored.
 
 ## Operators
@@ -175,81 +179,79 @@ Operators are symbols that triggers an action when applied to variables and othe
 
 ### Arithmetic Operators
 
-| Operator | Description |
-| :--: | :--: |
-| + | Addition |
-| - | Subtraction |
-| * | Multiplication |
-| / | Division |
-| % | Modulus |
+| Operator | Description    |
+|:--------:|:--------------:|
+| +        | Addition       |
+| -        | Subtraction    |
+| *        | Multiplication |
+| /        | Division       |
+| %        | Modulus        |
 
 ### Increment and Decrement Operators
 
 | Operator | Description |
-| :--: | :--: |
-| ++ | Increment |
-| −− | Decrement |
+|:--------:|:-----------:|
+| ++       | Increment   |
+| −−       | Decrement   |
 
 ### Relational Operators
 
-| Operator | Description |
-| :--: | :--: |
-| == | Is equal to |
-| != | Is not equal to |
-| > | Greater than |
-| < | Less than |
-| >= | Greater than or equal to |
-| <= | Less than or equal to |
-
+| Operator | Description              |
+|:--------:|:------------------------:|
+| ==       | Is equal to              |
+| !=       | Is not equal to          |
+| >        | Greater than             |
+| <        | Less than                |
+| >=       | Greater than or equal to |
+| <=       | Less than or equal to    |
 
 ### Logical Operators
 
-| Operator | Description |
-| :--: | :--: |
-| && | And operator. Performs logical conjunction of two expressions.(if both expressions evaluate to True, result is True. If either expression evaluates to False, the result is False) |
-| \|\| | Or operator. Performs a logical disjunction on two expressions.(if either or both expressions evaluate to True, the result is True) |
-| ! | Not operator. Performs logical negation on an expression. |
+| Operator | Description                                                                                                                                                                        |
+|:--------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| &&       | And operator. Performs logical conjunction of two expressions.(if both expressions evaluate to True, result is True. If either expression evaluates to False, the result is False) |
+| \|\|     | Or operator. Performs a logical disjunction on two expressions.(if either or both expressions evaluate to True, the result is True)                                                |
+| !        | Not operator. Performs logical negation on an expression.                                                                                                                          |
 
 ### Bitwise Operators
 
 Used on the **bits** of data.
 
-| Operator | Description |
-| :--: | :--: |
-| << | Binary Left Shift Operator |
-| != | Is not equal to |
-| >> | Binary Right Shift Operator |
-| ~ | Binary One's Complement Operator |
-| & | Binary AND Operator |
-| ^ | Binary XOR Operator |
-| \| | Binary OR Operator |
+| Operator | Description                      |
+|:--------:|:--------------------------------:|
+| <<       | Binary Left Shift Operator       |
+| !=       | Is not equal to                  |
+| >>       | Binary Right Shift Operator      |
+| ~        | Binary One's Complement Operator |
+| &        | Binary AND Operator              |
+| ^        | Binary XOR Operator              |
+| \|       | Binary OR Operator               |
 
 ### Assignment Operators
 
-| Operator | Description |
-| :--: | :--: |
-| = | Assign |
-| += | Increments, then assign |
-| -= | Decrements, then assign |
-| *= | Multiplies, then assign |
-| /= | Divides, then assign |
-| %= | Modulus, then assign |
-| <<= | Left shift and assign |
-| >>= | Right shift and assign |
-| &= | Bitwise AND assign |
-| ^= | Bitwise exclusive OR and assign |
-| \|= | Bitwise inclusive OR and assign |
-
+| Operator | Description                     |
+|:--------:|:-------------------------------:|
+| =        | Assign                          |
+| +=       | Increments, then assign         |
+| -=       | Decrements, then assign         |
+| *=       | Multiplies, then assign         |
+| /=       | Divides, then assign            |
+| %=       | Modulus, then assign            |
+| <<=      | Left shift and assign           |
+| >>=      | Right shift and assign          |
+| &=       | Bitwise AND assign              |
+| ^=       | Bitwise exclusive OR and assign |
+| \|=      | Bitwise inclusive OR and assign |
 
 ### Misc Operators
 
-| Operator | Description |
-| :--: | :--: |
-| , | Comma operator |
-| sizeOf() | Returns the size of a memory location |
-| & | Returns the address of a memory location |
-| * | Pointer to a variable |
-| ? : | Conditional Expression |
+| Operator | Description                              |
+|:--------:|:----------------------------------------:|
+| ,        | Comma operator                           |
+| sizeOf() | Returns the size of a memory location    |
+| &        | Returns the address of a memory location |
+| *        | Pointer to a variable                    |
+| ? :      | Conditional Expression                   |
 
 ### Operator Precedence
 
@@ -278,12 +280,12 @@ Used on the **bits** of data.
 <tr>
 <th rowspan="5"> 2
 </th>
-<td style="border-bottom-style: none"> <code>a++</code>&nbsp;&nbsp; <code>a--</code>
+<td style="border-bottom-style: none"> <code>a++</code>   <code>a--</code>
 </td>
 <td style="border-bottom-style: none"> Suffix/postfix <a href="https://en.cppreference.com/w/cpp/language/operator_incdec" title="cpp/language/operator incdec">increment and decrement</a>
 </td></tr>
 <tr>
-<td style="border-bottom-style: none; border-top-style: none"> <code><i>type</i>()</code>&nbsp;&nbsp; <code><i>type</i>{}</code>
+<td style="border-bottom-style: none; border-top-style: none"> <code><i>type</i>()</code>   <code><i>type</i>{}</code>
 </td>
 <td style="border-bottom-style: none; border-top-style: none"> <a href="https://en.cppreference.com/w/cpp/language/explicit_cast" title="cpp/language/explicit cast">Functional cast</a>
 </td></tr>
@@ -298,26 +300,26 @@ Used on the **bits** of data.
 <td style="border-bottom-style: none; border-top-style: none"> <a href="https://en.cppreference.com/w/cpp/language/operator_member_access#Built-in_subscript_operator" title="cpp/language/operator member access">Subscript</a>
 </td></tr>
 <tr>
-<td style="border-bottom-style: none; border-top-style: none"> <code>.</code>&nbsp;&nbsp; <code>-&gt;</code>
+<td style="border-bottom-style: none; border-top-style: none"> <code>.</code>   <code>-></code>
 </td>
 <td style="border-bottom-style: none; border-top-style: none"> <a href="https://en.cppreference.com/w/cpp/language/operator_member_access#Built-in_member_access_operators" title="cpp/language/operator member access">Member access</a>
 </td></tr>
 <tr>
 <th rowspan="10"> 3
 </th>
-<td style="border-bottom-style: none"> <code>++a</code>&nbsp;&nbsp; <code>--a</code>
+<td style="border-bottom-style: none"> <code>++a</code>   <code>--a</code>
 </td>
 <td style="border-bottom-style: none"> Prefix <a href="https://en.cppreference.com/w/cpp/language/operator_incdec" title="cpp/language/operator incdec">increment and decrement</a>
 </td>
 <td style="vertical-align: top" rowspan="10"> Right-to-left
 </td></tr>
 <tr>
-<td style="border-bottom-style: none; border-top-style: none"> <code>+a</code>&nbsp;&nbsp; <code>-a</code>
+<td style="border-bottom-style: none; border-top-style: none"> <code>+a</code>   <code>-a</code>
 </td>
 <td style="border-bottom-style: none; border-top-style: none"> Unary <a href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Unary_arithmetic_operators" title="cpp/language/operator arithmetic">plus and minus</a>
 </td></tr>
 <tr>
-<td style="border-bottom-style: none; border-top-style: none"> <code>!</code>&nbsp;&nbsp; <code>~</code>
+<td style="border-bottom-style: none; border-top-style: none"> <code>!</code>   <code>~</code>
 </td>
 <td style="border-bottom-style: none; border-top-style: none"> <a href="https://en.cppreference.com/w/cpp/language/operator_logical" title="cpp/language/operator logical">Logical NOT</a> and <a href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Bitwise_logic_operators" title="cpp/language/operator arithmetic">bitwise NOT</a>
 </td></tr>
@@ -332,7 +334,7 @@ Used on the **bits** of data.
 <td style="border-bottom-style: none; border-top-style: none"> <a href="https://en.cppreference.com/w/cpp/language/operator_member_access#Built-in_indirection_operator" title="cpp/language/operator member access">Indirection</a> (dereference)
 </td></tr>
 <tr>
-<td style="border-bottom-style: none; border-top-style: none"> <code>&amp;a</code>
+<td style="border-bottom-style: none; border-top-style: none"> <code>&a</code>
 </td>
 <td style="border-bottom-style: none; border-top-style: none"> <a href="https://en.cppreference.com/w/cpp/language/operator_member_access#Built-in_address-of_operator" title="cpp/language/operator member access">Address-of</a>
 </td></tr>
@@ -347,19 +349,19 @@ Used on the **bits** of data.
 <td style="border-bottom-style: none; border-top-style: none"> <a href="https://en.cppreference.com/w/cpp/language/coroutines" title="cpp/language/coroutines">await-expression</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span>
 </td></tr>
 <tr>
-<td style="border-bottom-style: none; border-top-style: none"> <code>new</code>&nbsp;&nbsp; <code>new[]</code>
+<td style="border-bottom-style: none; border-top-style: none"> <code>new</code>   <code>new[]</code>
 </td>
 <td style="border-bottom-style: none; border-top-style: none"> <a href="https://en.cppreference.com/w/cpp/language/new" title="cpp/language/new">Dynamic memory allocation</a>
 </td></tr>
 <tr>
-<td style="border-top-style: none"> <code>delete</code>&nbsp;&nbsp; <code>delete[]</code>
+<td style="border-top-style: none"> <code>delete</code>   <code>delete[]</code>
 </td>
 <td style="border-top-style: none"> <a href="https://en.cppreference.com/w/cpp/language/delete" title="cpp/language/delete">Dynamic memory deallocation</a>
 </td></tr>
 <tr>
 <th> 4
 </th>
-<td> <code>.*</code>&nbsp;&nbsp; <code>-&gt;*</code>
+<td> <code>.*</code>   <code>->*</code>
 </td>
 <td> <a href="https://en.cppreference.com/w/cpp/language/operator_member_access#Built-in_pointer-to-member_access_operators" title="cpp/language/operator member access">Pointer-to-member</a>
 </td>
@@ -368,49 +370,49 @@ Used on the **bits** of data.
 <tr>
 <th> 5
 </th>
-<td> <code>a*b</code>&nbsp;&nbsp; <code>a/b</code>&nbsp;&nbsp; <code>a%b</code>
+<td> <code>a*b</code>   <code>a/b</code>   <code>a%b</code>
 </td>
 <td> <a href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Multiplicative_operators" title="cpp/language/operator arithmetic">Multiplication, division, and remainder</a>
 </td></tr>
 <tr>
 <th> 6
 </th>
-<td> <code>a+b</code>&nbsp;&nbsp; <code>a-b</code>
+<td> <code>a+b</code>   <code>a-b</code>
 </td>
 <td> <a href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Additive_operators" title="cpp/language/operator arithmetic">Addition and subtraction</a>
 </td></tr>
 <tr>
 <th> 7
 </th>
-<td> <code>&lt;&lt;</code>&nbsp;&nbsp; <code>&gt;&gt;</code>
+<td> <code><<</code>   <code>>></code>
 </td>
 <td> Bitwise <a href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Bitwise_shift_operators" title="cpp/language/operator arithmetic">left shift and right shift</a>
 </td></tr>
 <tr>
 <th> 8
 </th>
-<td> <code>&lt;=&gt;</code>
+<td> <code><=></code>
 </td>
 <td> <a href="https://en.cppreference.com/w/cpp/language/operator_comparison#Three-way_comparison" title="cpp/language/operator comparison">Three-way comparison operator</a> <span class="t-mark-rev t-since-cxx20">(since C++20)</span>
 </td></tr>
 <tr>
 <th> 9
 </th>
-<td> <code>&lt;</code>&nbsp;&nbsp; <code>&lt;=</code>&nbsp;&nbsp; <code>&gt;</code>&nbsp;&nbsp; <code>&gt;=</code>
+<td> <code><</code>   <code><=</code>   <code>></code>   <code>>=</code>
 </td>
-<td> For <a href="https://en.cppreference.com/w/cpp/language/operator_comparison" title="cpp/language/operator comparison">relational operators</a> &lt; and ≤ and &gt; and ≥ respectively
+<td> For <a href="https://en.cppreference.com/w/cpp/language/operator_comparison" title="cpp/language/operator comparison">relational operators</a> < and ≤ and > and ≥ respectively
 </td></tr>
 <tr>
 <th> 10
 </th>
-<td> <code>==</code>&nbsp;&nbsp; <code>!=</code>
+<td> <code>==</code>   <code>!=</code>
 </td>
 <td> For <a href="https://en.cppreference.com/w/cpp/language/operator_comparison" title="cpp/language/operator comparison">equality operators</a> = and ≠ respectively
 </td></tr>
 <tr>
 <th> 11
 </th>
-<td> <code>&amp;</code>
+<td> <code>&</code>
 </td>
 <td> <a href="https://en.cppreference.com/w/cpp/language/operator_arithmetic#Bitwise_logic_operators" title="cpp/language/operator arithmetic">Bitwise AND</a>
 </td></tr>
@@ -431,7 +433,7 @@ Used on the **bits** of data.
 <tr>
 <th> 14
 </th>
-<td> <code>&amp;&amp;</code>
+<td> <code>&&</code>
 </td>
 <td> <a href="https://en.cppreference.com/w/cpp/language/operator_logical" title="cpp/language/operator logical">Logical AND</a>
 </td></tr>
@@ -467,22 +469,22 @@ Used on the **bits** of data.
 <td style="border-bottom-style: none; border-top-style: none"> <a href="https://en.cppreference.com/w/cpp/language/operator_assignment#Builtin_direct_assignment" title="cpp/language/operator assignment">Direct assignment</a> (provided by default for C++ classes)
 </td></tr>
 <tr>
-<td style="border-bottom-style: none; border-top-style: none"> <code>+=</code>&nbsp;&nbsp; <code>-=</code>
+<td style="border-bottom-style: none; border-top-style: none"> <code>+=</code>   <code>-=</code>
 </td>
 <td style="border-bottom-style: none; border-top-style: none"> <a href="https://en.cppreference.com/w/cpp/language/operator_assignment#Builtin_compound_assignment" title="cpp/language/operator assignment">Compound assignment</a> by sum and difference
 </td></tr>
 <tr>
-<td style="border-bottom-style: none; border-top-style: none"> <code>*=</code>&nbsp;&nbsp; <code>/=</code>&nbsp;&nbsp; <code>%=</code>
+<td style="border-bottom-style: none; border-top-style: none"> <code>*=</code>   <code>/=</code>   <code>%=</code>
 </td>
 <td style="border-bottom-style: none; border-top-style: none"> <a href="https://en.cppreference.com/w/cpp/language/operator_assignment#Builtin_compound_assignment" title="cpp/language/operator assignment">Compound assignment</a> by product, quotient, and remainder
 </td></tr>
 <tr>
-<td style="border-bottom-style: none; border-top-style: none"> <code>&lt;&lt;=</code>&nbsp;&nbsp; <code>&gt;&gt;=</code>
+<td style="border-bottom-style: none; border-top-style: none"> <code><<=</code>   <code>>>=</code>
 </td>
 <td style="border-bottom-style: none; border-top-style: none"> <a href="https://en.cppreference.com/w/cpp/language/operator_assignment#Builtin_compound_assignment" title="cpp/language/operator assignment">Compound assignment</a> by bitwise left shift and right shift
 </td></tr>
 <tr>
-<td style="border-top-style: none"> <code>&amp;=</code>&nbsp;&nbsp; <code>^=</code>&nbsp;&nbsp; <code>|=</code>
+<td style="border-top-style: none"> <code>&=</code>   <code>^=</code>   <code>|=</code>
 </td>
 <td style="border-top-style: none"> <a href="https://en.cppreference.com/w/cpp/language/operator_assignment#Builtin_compound_assignment" title="cpp/language/operator assignment">Compound assignment</a> by bitwise AND, XOR, and OR
 </td></tr>
@@ -497,7 +499,6 @@ Used on the **bits** of data.
 </td></tr></tbody></table>
 
 [Source](https://en.cppreference.com/w/cpp/language/operator_precedence)
-
 
 ## Punctuators
 
@@ -518,7 +519,6 @@ If you want the result in decimal form you can do:
 ## The MOD (%) operator
 
 Modulus ( % ) gives us the remainder i.e. 5 % 2 = 1
-
 
 ## Separating numbers using MOD and Division
 
@@ -542,7 +542,6 @@ cout << a << endl;
 // Output: 93
 ```
 
-
 ## Increment and Decrement Operator
 
 ```cpp
@@ -563,22 +562,20 @@ y = x++;
 x = 1;
 y = x++ + 1;
 // x contains 2, y contains 2
-
 ```
 
 ## The sizeof() operator
 
 [Discussed here](#sizeof)
 
-
 # Naming Convention for C++
 
-| Object | Convention |
-| :--: | :--: |
-| Constants | ALL_CAPS, ALLCAPS |
-| Variables | all_small, allsmall |
+| Object    | Convention              |
+|:---------:|:-----------------------:|
+| Constants | ALL_CAPS, ALLCAPS       |
+| Variables | all_small, allsmall     |
 | Functions | firstSmallRestCamelCase |
-| Classes | CamelCase |
+| Classes   | CamelCase               |
 
 [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html#Naming)
 
@@ -634,12 +631,14 @@ const double CAN_VOLUME = 0.355; // Single line comment
 # C++ Data Types
 
 | Simple/Basic | Modifiers | Qualifiers | Derived (Structured) | Composite (Advanced) |
-| :--: | :--: | :--: | :--: | :--: |
-| char | signed | static | arrays | lists |
-| int | unsigned | const | structures | queues |
-| float | long | volatile | unions | stacks |
-| double | - | void | classes | trees |
-| - | - | - | - | graphs |
+|:------------:|:---------:|:----------:|:--------------------:|:--------------------:|
+| char         | signed    | static     | arrays               | lists                |
+| int          | unsigned  | const      | structures           | queues               |
+| float        | long      | volatile   | unions               | stacks               |
+| double       | -         | void       | classes              | trees                |
+| -            | -         | -          | -                    | graphs               |
+
+[**Size Chart**](https://docs.oracle.com/cd/E19253-01/817-6223/chp-typeopexpr-2/index.html)
 
 # Character (char)
 
@@ -658,17 +657,17 @@ Char is actually an integer in the backend and can be used to make a program mor
 
 ![data/Untitled%206.png](data/Image8.png)
 
-[A better size chart here](https://docs.oracle.com/cd/E19253-01/817-6223/chp-typeopexpr-2/index.html)
+[**A better size chart here**](https://docs.oracle.com/cd/E19253-01/817-6223/chp-typeopexpr-2/index.html)
 
 ## Can double hold store data than long?
 
 Double is a floating point data type while long is an integral data type. The difference is in the manner of encoding number information.
 
 The 64 bit double format based on IEEE754 standard has the following breakup:
-  - Sign bit: 1 bit
-  - Exponent width: 11 bits
-  - Significant precision: 53 bits (52 explicitly stored)
 
+- Sign bit: 1 bit
+- Exponent width: 11 bits
+- Significant precision: 53 bits (52 explicitly stored)
 
 [Source](https://en.wikipedia.org/wiki/Double-precision_floating-point_format)
 
@@ -708,6 +707,7 @@ $$-\frac{2^{32}}{2} \iff 0 \iff \frac{2^{32}}{2}-1$$
 
 $$-2147483648 \iff 0 \iff 2147483647$$
 ```
+
 > 0 is considered a positive number. Thus, 1 is subtracted from the total number of positive integers when calculating total range of positive numbers.
 
 ## Storing floats in int
@@ -748,7 +748,7 @@ It is mainly used to get size of arrays.
 ```cpp
 #include <iostream>
 using namespace std;
- 
+
 int main() {
    cout << "Size of char : " << sizeof(char) << endl;
    cout << "Size of int : " << sizeof(int) << endl;
@@ -757,7 +757,7 @@ int main() {
    cout << "Size of float : " << sizeof(float) << endl;
    cout << "Size of double : " << sizeof(double) << endl;
    cout << "Size of wchar_t : " << sizeof(wchar_t) << endl;
-   
+
    return 0;
 }
 /*
@@ -770,7 +770,6 @@ Size of double : 8
 Size of wchar_t : 4
 */
 ```
-
 
 # static_cast()
 
@@ -919,7 +918,6 @@ However, a string literal can be concatenated with a variable with a string\char
 
 ![data/Untitled%2011.png](data/Image13.png)
 
-
 # If Else statement
 
 ```cpp
@@ -949,11 +947,11 @@ Dangling else can cause issues and can be quite difficult to debug.
 
 ```cpp
 if(x == 1)
-	if(x == 2)
-		if(x > 2)
+    if(x == 2)
+        if(x > 2)
 else //this else belongs to if(x > 2)
 {
-	//code
+    //code
 }
 ```
 
@@ -964,7 +962,6 @@ if (int k = 5; k < 10)
 {
   // k will only be useable inside 'the if' code block
 }
-
 ```
 
 # Conditional operator
@@ -973,7 +970,6 @@ if (int k = 5; k < 10)
 //condition ? true value : false value
 actual_floor = floor > 13 ? floor - 1 : floor;
 ```
-
 
 # Optimization while performing comparisons (Short Circuit)
 
@@ -1032,9 +1028,9 @@ double y =  sqrt(x);
 // Wrong way to compare
 
 if (x == y*y)
-	cout << "Comparison Working" << endl;
+    cout << "Comparison Working" << endl;
 else
-	cout << "Comparison Not Working" << endl;
+    cout << "Comparison Not Working" << endl;
 
 // Output:
 // Comparison Not Working
@@ -1043,9 +1039,9 @@ else
 
 double epsilon = 1E-14;
 if ( fabs(x - y*y) < epsilon )
-	cout << "Comparison Working" << endl;
+    cout << "Comparison Working" << endl;
 else
-	cout << "Comparison Not Working" << endl;
+    cout << "Comparison Not Working" << endl;
 
 // Output:
 // Comparison Working
@@ -1083,7 +1079,6 @@ cout << digit_name << endl;
 // four
 ```
 
-
 # Flowcharts Basic
 
 ![data/Untitled%2012.png](data/Image14.png)
@@ -1099,19 +1094,18 @@ int i = 2;
 bool pr = true; 
 while (i <= num / 2) 
 { 
-	if (num % i == 0)
-	{ 
-		pr = false; 
-	}
+    if (num % i == 0)
+    { 
+        pr = false; 
+    }
   ++i;
 } 
 if (pr) 
-	cout << "This is a prime number";
+    cout << "This is a prime number";
 else cout << "This is not a prime number";
 ```
 
 ![data/Untitled%2013.png](data/Image15.png)
-
 
 # cin.fail()
 
@@ -1123,12 +1117,12 @@ cin >> x;
 
 if (cin.fail())
 {
-	cout << "Error: Not an integer." << endl;
-	return 1; // used when the program closes due to an error
+    cout << "Error: Not an integer." << endl;
+    return 1; // used when the program closes due to an error
 } else
 {
-	cout << "Input was accepted" << endl;
-	return 0;
+    cout << "Input was accepted" << endl;
+    return 0;
 }
 ```
 
@@ -1141,7 +1135,7 @@ int values;
 cout << "Enter values, Q to quit.\n";
 while (cin >> values)
 {
-	// Process input.
+    // Process input.
 }
 cin.clear(); // removes errror flag
 
@@ -1164,7 +1158,6 @@ NOTE: `cin.clear()` and storing the cin's data in a dummy variable have separate
 [ios::clear - C++ Reference](http://www.cplusplus.com/reference/ios/ios/clear/)
 
 [istream::ignore - C++ Reference](http://www.cplusplus.com/reference/istream/istream/ignore/)
-
 
 # Enumerations
 
@@ -1218,7 +1211,6 @@ age a2 = 18;
 
 ![data/Untitled%2015.png](data/Image17.png)
 
-
 # For Loop
 
 ![data/Untitled%2016.png](data/Image18.png)
@@ -1247,7 +1239,6 @@ c: updating
 8. b will run
 and so on..
 */
-
 ```
 
 ## Different Shapes of For Loops
@@ -1283,7 +1274,7 @@ int i = 0;
 for (; ;)
 {
   if ( i >= 5) { break; }
-  
+
   cout << i;
   i++;
 }
@@ -1313,7 +1304,7 @@ cout << endl;
 */
 ```
 
-## Foreach loops with reference parameters (&) 
+## Foreach loops with reference parameters (&)
 
 If you modify the values of an array using foreach. You must declare the iterating variable with a '&' sign.
 
@@ -1381,7 +1372,6 @@ int main()
 
 ![data/Untitled%2018.png](data/Image20.png)
 
-
 # `break` and `continue`
 
 `break` statement breaks the loop while the `continue` statement goes to the next iteration o the loop.
@@ -1400,8 +1390,8 @@ int number = 0;
 
 for (int i = 0; i < 10; i++)
 {
-	number = rand() % 6 + 1;
-	cout << number << endl;
+    number = rand() % 6 + 1;
+    cout << number << endl;
 }
 ```
 
@@ -1413,10 +1403,9 @@ double number = 0;
 
 for (int i = 0; i < 10; i++)
 {
-	number = rand() * 1.0 / RAND_MAX; // multiply by 1.0 to convert
-	cout << number << endl;           // the calculation to double.
+    number = rand() * 1.0 / RAND_MAX; // multiply by 1.0 to convert
+    cout << number << endl;           // the calculation to double.
 }
-
 ```
 
 # Functions
@@ -1435,8 +1424,8 @@ double cube_volume(double side_length); // function head
 
 int main()
 {
-	cube_volume(6); // function used
-	return 0;
+    cube_volume(6); // function used
+    return 0;
 }
 
 // Definition of cube_volume
@@ -1490,7 +1479,7 @@ You should describe your functions using comments.
 */
 double pyramidVolume(double height, double base_area)
 {
-	return (height * base_area)/3;
+    return (height * base_area)/3;
 }
 ```
 
@@ -1604,6 +1593,7 @@ int main()
   swap(a, b);
 }
 ```
+
 For the program above, at the time of compilation the machine code for `swap` is copied into the machine code of `main`. In other words the body of `swap` is copied into `main` at the time of compilation.
 
 In the cas eof call by reference, the activation frame of `swap` is the same as the activation frame of `main`.
@@ -1644,14 +1634,14 @@ double pi = 3.142; // Global Variable
 
 double circumferenceOfCircle(int radius)
 {
-	return 2 * pi * radius; // Global Variable Used
+    return 2 * pi * radius; // Global Variable Used
 }
 
 int main()
 {
-	int r = 34; // Local Variable
-	cout << "Radius: " << r << endl;
-	cout << circumferenceOfCircle(r) << endl;
+    int r = 34; // Local Variable
+    cout << "Radius: " << r << endl;
+    cout << circumferenceOfCircle(r) << endl;
 }
 ```
 
@@ -1659,32 +1649,31 @@ Also check:
 
 [Scope resolution operator in C++ - GeeksforGeeks](https://www.geeksforgeeks.org/scope-resolution-operator-in-c/)
 
-
 > **DON'T USE GLOBAL VARIABLES**
 
 ## Other type of scopes
 
 - Block Scope (local within a block of code):
-
+  
     A variable whose scope is just a small block of code. E.g `i` in for loops:
-
-    ```cpp
-    for(int i = 0; i < 5; i++) 
-    {
-    	// i is only useable here
-    }
-    ```
+  
+  ```cpp
+  for(int i = 0; i < 5; i++) 
+  {
+      // i is only useable here
+  }
+  ```
 
 - Function scope (local within a block of function):
-
+  
     A variable which is only useable inside a function.
 
 - File scope:
-
+  
     A variable which is only useable inside a file.
 
 - Program scope:
-
+  
     A variable which is only useable inside a program. 
 
 # Static Variables
@@ -1733,7 +1722,6 @@ cout << integer << endl; // 5
 
 integer++;
 cout << i << endl; // 6
-
 ```
 
 [C++ References - tutorialspoint](https://www.tutorialspoint.com/cplusplus/cpp_references.htm)
@@ -1749,7 +1737,6 @@ Array is the collection of items of same type in contiguous memory (stack).
 ![data/Untitled%2021.png](data/Image23.png)
 
 ![data/Untitled%2022.png](data/Image24.png)
-
 
 ## `sizeof()` on arrays
 
@@ -1800,11 +1787,11 @@ Or the size can be calculated using the `sizeof()` operator in certain circumsta
 ```cpp
 double sum(double values[], int size) // passing in size is important
 {
-	double total = 0;
-	for (int i = 0; i < size; i++)
-	{
-		total = total + values[i];
-	}
+    double total = 0;
+    for (int i = 0; i < size; i++)
+    {
+        total = total + values[i];
+    }
  return total;
 }
 ```
@@ -1902,7 +1889,6 @@ arr: -32 -1  15  33  454
 
 [Binary Search - GeeksforGeeks](https://www.geeksforgeeks.org/binary-search/)
 
-
 # Multi-Dimensional Array
 
 ![data/Untitled%2023.png](data/Image25.png)
@@ -1918,7 +1904,6 @@ arr: -32 -1  15  33  454
 - A variable used to store the address of some data.
 - References(`&`) are managed by the compiler but pointers are directly managed by the programmer.
 - A program can not access the heap directly. To use heap, it needs to make use of pointers. 
-
 
 [POINTERS in C++ - Youtube](https://www.youtube.com/watch?v=DTxHyVn0ODg)
 
@@ -1974,7 +1959,6 @@ cout << *p << endl;
 1
 1
 */
-
 ```
 
 ![data/Untitled%2028.png](data/Image30.png)
@@ -2042,6 +2026,7 @@ int main()
 C language stores strings in `char*` which are quite similar to `char[]`. A string stored in a char* is called a 'c-string'. `string.h` is used to work with c-strings.
 
 A c-string can be declared with the following command: 
+
 ```cpp
 const char* string = "Harry";
 //The `char*` must be a constant.
@@ -2051,7 +2036,6 @@ C++ uses the `string` datatype to store strings.
 
 > If you are programming in c++, it is recommended to not use c-string (or any c function).
 
-
 ## char[] and char* and strings
 
 [char* vs std:string vs char[] in C++ - GeeksForGeeks](https://www.geeksforgeeks.org/char-vs-stdstring-vs-char-c/)
@@ -2059,10 +2043,12 @@ C++ uses the `string` datatype to store strings.
 [Difference between char and char* in c - StackExchange](https://cs50.stackexchange.com/questions/8899/difference-between-char-and-char-in-c)
 
 In the backend a `char*` is:
-  - `char[]` in C
-  - `const char[]` in C++
+
+- `char[]` in C
+- `const char[]` in C++
 
 A weird behavior of char*:
+
 ```cpp
 /*  Will work */
 const char backend_char_array[] = "abc";
@@ -2079,6 +2065,8 @@ char_arr = "Lorem";
 Null terminator `\0` is a character which tells the compiler the point where the string ends. 
 
 For example a `"CS100"` in its array form is `['C', 'S', '1', '0', '0', '\0']`. As you can see, a 5 character long string requires an array of size 6.
+
+> Note: All char pointers declared using `new` keyword have their memory locations filled with `'\0'`.
 
 ### A function using Null Terminator
 
@@ -2103,7 +2091,6 @@ int main()
 
 // 5
 ```
-
 
 # C++ strings and the [] Operator
 
@@ -2136,8 +2123,11 @@ value = nullptr;
 
 <!--![data/Untitled%2031.png](data/Image33.png)-->
 
+## How does delete know how many bytes to delete
 
-## Common Memory Allocation 
+[**How does delete[] "know" the size of the operand array?**](https://stackoverflow.com/questions/197675/how-does-delete-know-the-size-of-the-operand-array)
+
+## Common Memory Allocation
 
 - Uninitialized Pointers
 - Memory Leak
@@ -2162,12 +2152,13 @@ int main()
 {
 
   Student s1;
-  
+
   s1.name = "Hamza";
   s1.age = 19;
 
   cout << s1.name << " is " << s1.age << " years old" << endl; 
 
 }
-
 ```
+
+# Class
