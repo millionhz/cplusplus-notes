@@ -2,7 +2,14 @@
 
 ## Other Resources
 
+
 [A Complete Guide to Programming in C++](http://www.lmpt.univ-tours.fr/~volkov/C++.pdf)
+
+<!-- [A Complete Guide to Programming in C++](https://github.com/millionhz/MY-CS-BOOKS/raw/main/Books/A%20Complete%20Guide%20to%20Programming%20in%20C%2B%2B.pdf) -->
+
+[Cherno's C++ Series](https://www.youtube.com/playlist?list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb)
+
+[Learn C++ Programming -Beginner to Advance- Deep Dive in C++](https://www.udemy.com/course/cpp-deep-dive/)
 
 # C++ - The Basics
 
@@ -2060,6 +2067,8 @@ char char_arr[] = "abc";
 char_arr = "Lorem";
 ```
 
+Why? Well because Arrays and pointer are not exactly the same. Arrays are more of wrapper around pointers.
+
 ## Null Terminator
 
 Null terminator `\0` is a character which tells the compiler the point where the string ends. 
@@ -2161,4 +2170,30 @@ int main()
 }
 ```
 
-# Class
+# Object-Oriented Programming
+
+# Classes
+
+## Constructors
+
+## Destructors
+
+## Data Members
+
+## Member Functions
+
+## Access Modifiers
+
+# Inheritance
+
+## Types of Inheritance
+
+## Design Patterns
+
+# Polymorphism
+
+## Class pointers
+
+## `virtual` keyword
+
+## Templates
