@@ -2,7 +2,6 @@
 
 ## Other Resources
 
-
 [A Complete Guide to Programming in C++](http://www.lmpt.univ-tours.fr/~volkov/C++.pdf)
 
 <!-- [A Complete Guide to Programming in C++](https://github.com/millionhz/MY-CS-BOOKS/raw/main/Books/A%20Complete%20Guide%20to%20Programming%20in%20C%2B%2B.pdf) -->
@@ -77,9 +76,23 @@ Object code is a portion of machine code that has not yet been linked into a com
 
 Backslash ' \ ' is used to print special characters.
 
-![](data/Image3.png)
+<!-- ![](data/Image3.png) -->
 
-## Errors
+| Escape Sequence | Description          |
+|:---------------:|:--------------------:|
+| \'              | single quote         |
+| \"              | double quote         |
+| \?              | question mark        |
+| \\\             | backslash            |
+| \a              | audible bell         |
+| \b              | backspace            |
+| \f              | form feed - new page |
+| \n              | line feed - newline  |
+| \r              | carriage return      |
+| \t              | horizontal tab       |
+| \v              | vertical tab         |
+
+# Errors
 
 ### Compile-Time Error or Syntax Error
 
@@ -101,6 +114,7 @@ There are no strict requirements for pseudocode because it is read by human read
 
 [![](data/ezgif-3-f4c339b48dbb.png)](https://www.lookuptables.com/text/ascii-table)
 
+<!--
 # Number System
 
 ![data/Untitled%203.png](data/Image4.png)
@@ -110,8 +124,9 @@ There are no strict requirements for pseudocode because it is read by human read
 [Number System Conversion](https://www.tutorialspoint.com/basics_of_computers/basics_of_computers_number_system_conversion.htm)
 
 [Real Numbers and Floating-Point Representation.pdf](data/3.1.3_Real_Numbers_and_Floating-Point_Representation.pdf)
+-->
 
-## Writing Numbers in C++
+# Writing Numbers in C++
 
 - For Hexadecimal use: `\x`
 - For Octal use: `\0`
@@ -138,10 +153,6 @@ The C++ compiler recognizes these kinds of tokens:
 
 Identifiers are used as the general terminology for naming of variables, functions and arrays. Identifier names must differ in **spelling** and **case** from any keywords. You cannot use keywords as identifiers; they are reserved for special use. Once declared, you can use the identifier in later program statements to refer to the associated value
 
-## Keywords
-
-Keywords are pre-defined or reserved words in a programming language. Each keyword is meant to perform a specific function in a program. Since keywords are referred names for a compiler, they can’t be used as variable names because by doing so, we are trying to assign a new meaning to the keyword which is not allowed.
-
 ### Rules for naming identifier:
 
 - It must begin with a letter or underscore(_).
@@ -149,6 +160,45 @@ Keywords are pre-defined or reserved words in a programming language. Each keywo
 - It should not be a keyword.
 - It must not contain white space.
 - It must not start with a digit.
+
+## Keywords
+
+Keywords are pre-defined or reserved words in a programming language. Each keyword is meant to perform a specific function in a program. 
+
+Since keywords are referred names for a compiler, they can’t be used as variable names because by doing so, we are introducing ambiguity.
+
+|                         |                        |                             |
+| ----------------------- | ---------------------- | --------------------------- |
+| alignas (since C++11)   | explicit               | signed                      |
+| alignof (since C++11)   | export(1)              | sizeof                      |
+| and                     | extern                 | static                      |
+| and_eq                  | FALSE                  | static_assert (since C++11) |
+| asm                     | float                  | static_cast                 |
+| auto(1)                 | for                    | struct                      |
+| bitand                  | friend                 | switch                      |
+| bitor                   | goto                   | template                    |
+| bool                    | if                     | this                        |
+| break                   | inline                 | thread_local (since C++11)  |
+| case                    | int                    | throw                       |
+| catch                   | long                   | TRUE                        |
+| char                    | mutable                | try                         |
+| char16_t (since C++11)  | namespace              | typedef                     |
+| char32_t (since C++11)  | new                    | typeid                      |
+| class                   | noexcept (since C++11) | typename                    |
+| compl                   | not                    | union                       |
+| concept (concepts TS)   | not_eq                 | unsigned                    |
+| const                   | nullptr (since C++11)  | using(1)                    |
+| constexpr (since C++11) | operator               | virtual                     |
+| const_cast              | or                     | void                        |
+| continue                | or_eq                  | volatile                    |
+| decltype (since C++11)  | private                | wchar_t                     |
+| default(1)              | protected              | while                       |
+| delete(1)               | public                 | xor                         |
+| do                      | register               | xor_eq                      |
+| double                  | reinterpret_cast       |                             |
+| dynamic_cast            | requires (concepts TS) |                             |
+| else                    | return                 |                             |
+| enum                    | short                  |                             |
 
 ## Literals
 
@@ -509,9 +559,21 @@ Used on the **bits** of data.
 
 ## Punctuators
 
-![data/Screenshot_(49).png](data/Image7.png)
+<!--![data/Screenshot_(49).png](data/Image7.png)-->
 
-# Extra info on some important operators
+| Punctuator  | Symbol | Description                                                                                            |
+| ----------- | ------ | ------------------------------------------------------------------------------------------------------ |
+| Brackets    | `[]`   | Opening and closing brackets indicate single and multidimensional array subscript.                     |
+| Parentheses | `()`   | Opening and closing parentheses indicate function calls; function parameters for grouping expressions. |
+| Braces      | `{}`   | Opening and closing braces indicate start and end of a compound statement.                             |
+| Comma       | `,`    | It is used as a separator is a function argument list.                                                 |
+| Semicolon   | `;`    | It is used as a statement terminator.                                                                  |
+| Colon       | `:`    | It indicates a labeled statement or conditional operator symbol.                                       |
+| Asterisk    | `*`    | It is used in pointer declaration and dereferencing and as multiplication operator.                    |
+| Equal sign  | `=`    | It is used as an assignment operator.                                                                  |
+| Pound sign  | `#`    | It is used as a preprocessor directive.                                                                |
+
+# Important operators
 
 ## The Division operator ( / ) (C++ specific)
 
@@ -571,7 +633,7 @@ y = x++ + 1;
 // x contains 2, y contains 2
 ```
 
-## The sizeof() operator
+## The `sizeof`operator
 
 [Discussed here](#sizeof)
 
@@ -593,11 +655,15 @@ An identifier whose value can be modified or changed.
 ## Variable definition and assignment
 
 ```cpp
-int cans_per_pack = 6;
-// Variable definition (declaration + assignment)
+int number;
+// Declaration statement
 
-cans_per_pack = 8; 
+number = 8; 
 // Assignment statement
+
+
+int another_number = 6;
+// Variable definition (declaration + assignment)
 ```
 
 You must define a variable before you use it for the first time.
@@ -662,7 +728,17 @@ Char is actually an integer in the backend and can be used to make a program mor
 
 # Numeric Types
 
-![data/Untitled%206.png](data/Image8.png)
+<!--![data/Untitled%206.png](data/Image8.png)-->
+
+| Type           | Range                                                    | Size    |
+|:--------------:|:--------------------------------------------------------:|:-------:|
+| int            | -2,147,483,648 ... 2,147,483,647                         | 4 bytes |
+| unsigned       | 0 ... 4,294,967,295                                      | 4 bytes |
+| short          | -32,768 ... 32,767                                       | 2 bytes |
+| unsigned short | 0 ... 65,535                                             | 2 bytes |
+| long long      | -9,223,372,036,854,775,808 ... 9,223,372,036,854,775,807 | 8 bytes |
+| double         | Double-precision floating-point                          | 8 bytes |
+| float          | Single-precision floating point                          | 4 bytes |
 
 [**A better size chart here**](https://docs.oracle.com/cd/E19253-01/817-6223/chp-typeopexpr-2/index.html)
 
@@ -698,16 +774,13 @@ For floating-points, a computer can not store the exact value of a fraction and 
 
 ## Calculating range of a 32bit integer
 
-<!---
+$$
+-\frac{2^{32}}{2} \iff 0 \iff \frac{2^{32}}{2}-1
+$$
 
-<p align="center">
-<img src="https://render.githubusercontent.com/render/math?math=\huge-\frac{2^{32}}{2} \iff 0 \iff \frac{2^{32}}{2}-1">
-</p>
-
-<p align="center">
-<img src="https://render.githubusercontent.com/render/math?math=\huge-2147483648 \iff 0 \iff 2147483647">
-</p>
--->
+$$
+-2147483648 \iff 0 \iff 2147483647
+$$
 
 ```latex
 $$-\frac{2^{32}}{2} \iff 0 \iff \frac{2^{32}}{2}-1$$
@@ -744,7 +817,7 @@ float = 2.45f;
 
 [auto cpp - Microsoft](https://docs.microsoft.com/en-us/cpp/cpp/auto-cpp)
 
-# sizeof()
+# `sizeof`
 
 The `sizeof` is a keyword, but it is a compile-time operator that determines the size, in bytes, of a variable or data type.
 
@@ -789,11 +862,18 @@ int n = static_cast<int>(3.14);
 
 # Input and Output
 
-![data/Untitled%207.png](data/Image9.png)
+<!--![data/Untitled%207.png](data/Image9.png)-->
+
+```cpp
+cout << "Enter number of bottles: "; //prompt
+
+int bottles;
+cin >> bottles; // input 
+```
 
 `cin` only reads one word. 
 
-Example if you try to input `Double Word` with `cinn` only `Double` will be used. 
+Example if you try to input `Double Word` with `cnn` only `Double` will be loaded. 
 
 To take multiword inputs use `getline()`.
 
@@ -802,6 +882,58 @@ string city;
 getline(cin, city);
 // read till the end of the line and store it in the variable city
 ```
+
+## cin.fail()
+
+`cin.fail()` is used for Input Validation. Below is an example implementation:
+
+```cpp
+int x = 0;
+cin >> x;
+
+if (cin.fail())
+{
+    cout << "Error: Not an integer." << endl;
+    return 1; // used when the program closes due to an error
+} else
+{
+    cout << "Input was accepted" << endl;
+    return 0;
+}
+```
+
+## Clearing Input Failure State
+
+When an input operation has failed, all further input operations also fail. If you want to read two number sequences and use a letter as a sentinel, you need to clear the failure state after reading the first sentinel. Call the `cin.clear()` function.
+
+```cpp
+int values;
+cout << "Enter values, Q to quit.\n";
+while (cin >> values)
+{
+    // Process input.
+}
+cin.clear(); // removes errror flag
+
+// Suppose the user has entered 30 10 5 Q. 
+// The input of Q has caused the failure. Because 
+// only successfully processed characters are 
+// removed from the input, the Q character is 
+// still present. Read it into a dummy variable.
+
+string sentinel;
+getline(cin, sentinel); // inplace of this you can also use cin.ignore(1000, '\n');
+
+// every input after this will work fine
+```
+
+The `cin.clear()` clears the **error flag** on cin so that future I/O operations will work correctly.
+
+NOTE: `cin.clear()` and storing the cin's data in a dummy variable have separate purposes. Also see `cin.ignore()` and `cin.flush()`.
+
+[ios::clear - C++ Reference](http://www.cplusplus.com/reference/ios/ios/clear/)
+
+[istream::ignore - C++ Reference](http://www.cplusplus.com/reference/istream/istream/ignore/)
 
 # Formatted Outputs
 
@@ -815,7 +947,15 @@ getline(cin, city);
 
 ## Examples:
 
-![data/Untitled%208.png](data/Image10.png)
+<!--![data/Untitled%208.png](data/Image10.png)-->
+
+| Statement                                   | Output       | Comment                                                                                              |
+|:-------------------------------------------:|:------------:|:----------------------------------------------------------------------------------------------------:|
+| `cout << 12.345678;`                        | `12.3457`    | By default, a number is printed with 6 significant digits.                                           |
+| `cout << fixed << setprecision(2) << 12.3;` | `12.30`      | Use the fixed and setprecision manipulators to control the number of digits after the decimal point. |
+| `cout << ":" << setw(6) << 12;`             | `:    12`    | Four spaces are printed before the number, for a total width of 6 characters.                        |
+| `cout << ":" << set(2) << 123;`             | `:123`       | If the width not sufficient, it is ignored.                                                          |
+| `cout << setw(6) << ":" << 12;`             | `     :12.3` | The width only refers to the next item. Here, the : is preceded by five spaces.                      |
 
 ## setprecision() examples
 
@@ -917,6 +1057,7 @@ However, a string literal can be concatenated with a variable with a string\char
 
 ![data/Untitled%209.png](data/Image11.png)
 
+<!--
 # Comparison Operators
 
 ![data/Untitled%2010.png](data/Image12.png)
@@ -924,6 +1065,7 @@ However, a string literal can be concatenated with a variable with a string\char
 ## Comparison Examples
 
 ![data/Untitled%2011.png](data/Image13.png)
+-->
 
 # If Else statement
 
@@ -978,7 +1120,7 @@ if (int k = 5; k < 10)
 actual_floor = floor > 13 ? floor - 1 : floor;
 ```
 
-# Optimization while performing comparisons (Short Circuit)
+# Short Circuiting
 
 C++ optimizes the comparisons by only running half of the comparisons. 
 
@@ -1011,6 +1153,10 @@ yes() || yes(); // output: yes
 
 # De Morgan's Law
 
+$$
+! \; (A \; \&\& \; B)  == \; !A \; || \; !B
+$$
+
 ```latex
 $$! \; (A \; \&\& \; B)  == \; !A \; || \; !B$$
 ```
@@ -1020,6 +1166,10 @@ $$! \; (A \; \&\& \; B)  == \; !A \; || \; !B$$
 Exact Comparison of Floating-Point Numbers Floating-point numbers have only a limited precision, and calculations can introduce roundoff errors.
 
 Use the following equation to compare the Floating-Point Number:
+
+$$
+|x-y|<\epsilon
+$$
 
 ```latex
 $$|x-y|<\epsilon$$
@@ -1060,8 +1210,6 @@ C++ uses Lexicographic Ordering of Strings. This ordering is very similar to the
 
 The easier way to look at it is to just use the ASCII table for comparisons. The character with the lower ASCII value will be less than the character with  higher ASCII value.
 
-Also, longer words have a value higher than lower words.
-
 # Switch Statement
 
 ```cpp
@@ -1086,6 +1234,7 @@ cout << digit_name << endl;
 // four
 ```
 
+<!--
 # Flowcharts Basic
 
 ![data/Untitled%2012.png](data/Image14.png)
@@ -1113,58 +1262,7 @@ else cout << "This is not a prime number";
 ```
 
 ![data/Untitled%2013.png](data/Image15.png)
-
-# cin.fail()
-
-`cin.fail()` is used for Input Validation. Below is an example implementation:
-
-```cpp
-int x = 0;
-cin >> x;
-
-if (cin.fail())
-{
-    cout << "Error: Not an integer." << endl;
-    return 1; // used when the program closes due to an error
-} else
-{
-    cout << "Input was accepted" << endl;
-    return 0;
-}
-```
-
-# Clearing Input Failure State
-
-When an input operation has failed, all further input operations also fail. If you want to read two number sequences and use a letter as a sentinel, you need to clear the failure state after reading the first sentinel. Call the `cin.clear()` function.
-
-```cpp
-int values;
-cout << "Enter values, Q to quit.\n";
-while (cin >> values)
-{
-    // Process input.
-}
-cin.clear(); // removes errror flag
-
-// Suppose the user has entered 30 10 5 Q. 
-// The input of Q has caused the failure. Because 
-// only successfully processed characters are 
-// removed from the input, the Q character is 
-// still present. Read it into a dummy variable.
-
-string sentinel;
-getline(cin, sentinel); // inplace of this you can also use cin.ignore(1000, '\n');
-
-// every input after this will work fine
-```
-
-The `cin.clear()` clears the **error flag** on cin so that future I/O operations will work correctly.
-
-NOTE: `cin.clear()` and storing the cin's data in a dummy variable have separate purposes. Also see `cin.ignore()` and `cin.flush()`.
-
-[ios::clear - C++ Reference](http://www.cplusplus.com/reference/ios/ios/clear/)
-
-[istream::ignore - C++ Reference](http://www.cplusplus.com/reference/istream/istream/ignore/)
+-->
 
 # Enumerations
 
@@ -1212,19 +1310,31 @@ age a2 = 18;
 
 # While Loop
 
-![data/Untitled%2014.png](data/Image16.png)
+```cpp
+while (/* condition */) {
+  /* code */
+}
+```
 
-## While Loop Examples
+# # Do While Loop
 
-![data/Untitled%2015.png](data/Image17.png)
+Do While Loop is a modification of the While Loop.
+
+The do loop is appropriate when the loop body must be executed at least once.
+
+```cpp
+do {
+  /* code */
+} while(/* condition */);
+```
 
 # For Loop
 
-![data/Untitled%2016.png](data/Image18.png)
-
-## For Loop Examples
-
-![data/Untitled%2017.png](data/Image19.png)
+```cpp
+for (size_t i = 0; i < count; i++) {
+  /* code */
+}
+```
 
 ## Inner Workings of a for loop
 
@@ -1326,62 +1436,11 @@ for(int &x: arr)
 //arr: {2, 3, 4, 5, 6}
 ```
 
-# Do While Loop
-
-Do While Loop is a modification of the While Loop.
-
-The do loop is appropriate when the loop body must be executed at least once.
-
-```cpp
-do
-{
- // statements
-}
-while (x > 0); // condition
-```
-
-# Some looping Algorithms
-
-## Reversing an integer
-
-```cpp
-#include <iostream>
-
-using namespace std;
-
-int reverseInteger(int n)
-{
-  int reversed = 0;
-
-  while(n > 0)
-  {
-    reversed = reversed*10 + (n % 10);
-    n /= 10;
-  }
-
-  return reversed;
-
-}
-
-int main()
-{
-  int n = 8421;
-
-  cout << reverseInteger(n) << endl;
-
-  return 0;
-}
-
-// output: 1248
-```
-
-# Loop and a Half
-
-![data/Untitled%2018.png](data/Image20.png)
-
 # `break` and `continue`
 
-`break` statement breaks the loop while the `continue` statement goes to the next iteration o the loop.
+- `break` statement breaks the loop
+
+- `continue` statement goes to the next iteration o the loop.
 
 # Random Numbers
 
@@ -1614,8 +1673,11 @@ For this reason, call by reference is only used for simple functions.
 ## Function Pointer
 
 ```cpp
-void (*func)() = myFunc;
-//declared func
+void (*func)() = myFunc; // myfunc is a function
+//declared func as a function pointer
+
+
+func(); // calling the function 
 ```
 
 # Stack Frame
@@ -1821,6 +1883,7 @@ The `const` reserved word helps in the readability of the code, making it clear 
 
 If the implementation of the function tries to modify the array, the compiler issues a warning.
 
+<!--
 # Common Array Algorithms
 
 ## Filling an array with user inputs
@@ -1905,6 +1968,7 @@ arr: -32 -1  15  33  454
 [C++ Program to Multiply Two Matrix Using Multi-dimensional Arrays - Programiz](https://www.programiz.com/cpp-programming/examples/matrix-multiplication)
 
 [Passing a 2D array to a C++ function - StackOverflow](https://stackoverflow.com/questions/8767166/passing-a-2d-array-to-a-c-function)
+-->
 
 # Pointers
 
@@ -1930,14 +1994,27 @@ int* px = &x; // a pointer px storing the memory address of variable x
 
 ## Constant Pointers
 
-You can not change the value of to which a constant pointer points to.
+The use of `const` with pointers is a little confusing so check the following examples:
 
-```cpp
-int x = 0;
-const int* xp = &x;
+- `int*` - pointer to int
+- `int const *` - pointer to const int
+- `int * const` - const pointer to int
+- `int const * const` - const pointer to const int
 
-*xp = 3; //Error
-```
+Now the first `const` can be on either side of the type so:
+
+- `const int *` == `int const *`
+- `const int * const` == `int const * const`
+
+If you want to go really crazy you can do things like this:
+
+- `int **` - pointer to pointer to int
+- `int ** const` - a const pointer to a pointer to an int
+- `int * const *` - a pointer to a const pointer to an int
+- `int const **` - a pointer to a pointer to a const int
+- `int * const * const` - a const pointer to a const pointer to an int
+
+[Source](https://stackoverflow.com/questions/1143262/what-is-the-difference-between-const-int-const-int-const-and-int-const)
 
 # Array and pointers
 
@@ -1979,53 +2056,6 @@ double a[10];
 double* p = a;
 
 // *(p + 3) == a[3]
-```
-
-## Array/Pointer Duality Law
-
-This law explains why all C++ arrays start with an index of zero. The pointer a (or a + 0) points to the starting element of the array. That element must therefore be a[0]. To better understand pointer arithmetic, let’s again pretend that we know actual memory addresses. Suppose the array a starts at address 20300. The array contains 10 values of type double. A double value occupies 8 bytes of memory. Therefore, the array occupies 80 bytes, from 20300 to 20379. The starting value is located at address 20300 the next one at address 20308, and so on.
-
-```latex
-$$a[n] == *(a+n)$$
-```
-
-## Using Pointer Arithmetic to print an Array
-
-```cpp
-int arr[5] = {1, 2, 3, 4, 5};
-int* p = arr;
-
-for(int i = 0 ;i < sizeof(arr)/sizeof(int); i++)
-{
-  cout << *(p+i);
-}
-cout << endl;
-
-// 12345
-```
-
-## Passing array to a function using pointers
-
-```cpp
-void printarray1(int* arr, int size)
-{
-  cout << "[";
-  for (int i = 0; i < size; i++)
-  {
-    cout << *(arr + i) << ", ";
-  }
-  cout << "\b\b]" << endl;;
-}
-
-int main()
-{
-  int arr[5] = {2, 3, 5 ,6, 3};
-
-  printarray1(arr, 5);
-}
-
-// Output:
-// [2, 3, 5, 6, 3]
 ```
 
 # Char Pointers (C-Strings)
@@ -2144,6 +2174,96 @@ value = nullptr;
 
 ![data/Untitled%2030.png](data/Image32.png)
 
+# Preprocessors
+
+The preprocessors are used to process the code before sending it to the compiler. The most common way is the file inclusion using `#include <>`. You can also use macro preprocessors by using `#define NUMBER 1`, these acts like a string substitution.
+
+When you open a `.h` the contents of the file you often see looks something like this:
+
+```cpp
+#ifndef main_h
+#define main_h
+
+void function_name();#endif /* main_h */
+```
+
+They are called as an "include guard" which checks for inclusion.
+
+Another type of preprocessor is used by using `#pragma` that are used (or targeted) for specific compilers and architectures.
+
+## Macro Constants
+
+You can define a macro constant by using `#define macro`. For example:
+
+```cpp
+#define NUMBER 1
+
+int main(int argc, char const *argv[]) {
+    printf("%d\n", NUMBER);
+    return 0;
+}
+```
+
+When the above code is compiled the NUMBER is replaced by a literal value before the code reaches to the compiler. At this point you cannot get its address or use pointers.
+
+## Including a file
+
+To include a file in a C++ file you would have to use `#include "file_name.h"`. This will place all the contents in the `cpp` before the code is sent to the compiler.
+
+### Conditions in preprocessor
+
+Preprocessor consists of different types of conditional compilation
+
+| #if     | Opening `if` condition     |
+| ------- | -------------------------- |
+| #else   | `else` condition           |
+| #elif   | `else if` condition        |
+| #ifdef  | `if defined` condition     |
+| #ifndef | `if not defined` condition |
+| #endif  | `end if` condition         |
+
+Also, there are two alternatives for `#ifdef` and `#ifndef`, they are:
+
+```cpp
+#if defined(macro)
+#if !defined(macro)
+```
+
+## Macro expansion
+
+Macro's can also take parameters and replace them when called. For example:
+
+```cpp
+#define ADD(a,b) (a+b)
+
+int main(int argc, char const *argv[]) {
+    printf("%d\n", ADD(10,20));
+    return 0;
+}
+```
+
+## Line continuation
+
+If you want to use complex macros you can use `line continuation` by add `\` at the end of the each line. For example:
+
+```cpp
+#define LOOPER(i) do \
+                { \
+                    printf("%d\n",i++); \
+                } while (i < 3);
+```
+
+## Include guard
+
+There might be a situation where you might have to define a header file in another header file and when called in a C++ file you might include both header files. When you compile this you will have a `Build fail`, to over come this we have to include something called as `Include guard`. It looks something like this
+
+```c
+#ifndef _HEADERNAME_H
+#define _HEADERNAME_H
+...
+#endif
+```
+
 # Struct
 
 [CLASSES vs STRUCTS in C++ - YouTube](https://www.youtube.com/watch?v=fLgTtaqqJp0)
@@ -2174,26 +2294,85 @@ int main()
 
 # Classes
 
-## Constructors
+C++ is a an Object Oriented Program, that's what makes it different from C programming language. A class is define by using `class` keyword followed by class name. For example:
 
-## Destructors
+```cpp
+class name_t {
+	int i; // Data members
+public: // Function members
+	name_t (arguments); // Constructor
+	~name_t (); // Destructor
+};
+```
 
-## Data Members
+Few points to remember:
 
-## Member Functions
+- A class can have multiple constructor and only one destructor.
+- A class when called and naming it is called an instance of that class. Example `name_t name;`, `name` is an instance of class `name_t`.
+- Using classes you can allocate memory properly.
 
-## Access Modifiers
+## Defining Classes and Objects
 
-# Inheritance
+Classes can be defined in a contained manner, for example:
 
-## Types of Inheritance
+```cpp
+class name_t {
+public:
+	void some_name (arguments);
+private:
+	int i;
+};
 
-## Design Patterns
+void name_t::some_name (arguments){/* do something */};
 
-# Polymorphism
+int main(int argc, char const *argv[]) {
+	name_t obj1;
+	return 0;
+}
+```
 
-## Class pointers
+Or the class can be defined using the scope resolution operator `::`:
 
-## `virtual` keyword
+```cpp
+class name_t {
+public:
+	void some_name (arguments);
+private:
+	int i;
+};
 
-## Templates
+void name_t::some_name (arguments){/* do something */};
+
+int main(int argc, char const *argv[]) {
+	name_t obj1;
+	return 0;
+}
+```
+
+The code here is divided into 3 stages:
+
+-  *Interface*: Usually kept in the header file.
+  
+  ```cpp
+   class name_t {
+   private:
+   	/* data */
+   public:
+   	void some_name (arguments);
+   };
+  ```
+
+- *Implementation*: Usually kept in an implementation file
+  
+  ```cpp
+   void name_t::some_name (arguments){/* do something */};
+  ```
+
+- *Usage*: Usually kept in `cpp` file
+  
+  ```cpp
+   int main(int argc, char const *argv[]) {
+   	name_t obj1;
+   	return 0;
+   }
+  ```
