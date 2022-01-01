@@ -2292,6 +2292,8 @@ int main()
 
 # Object-Oriented Programming
 
+[OOP Lecture Notes](https://www.cet.edu.in/noticefiles/285_OOPS%20lecture%20notes%20Complete.pdf)
+
 # Classes
 
 C++ is a an Object Oriented Program, that's what makes it different from C programming language. A class is define by using `class` keyword followed by class name. For example:
