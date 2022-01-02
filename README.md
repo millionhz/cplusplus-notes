@@ -10,7 +10,7 @@
 
 [Learn C++ Programming -Beginner to Advance- Deep Dive in C++](https://www.udemy.com/course/cpp-deep-dive/)
 
-# C++ - The Basics
+# C++ - Intro
 
 C++ is a high level object-oriented programing language.
 
@@ -44,8 +44,6 @@ int main()
 }
 ```
 
-![](data/Image2.png)
-
 ## C++ File Types
 
 | File Type        | File extension | Description                                              |
@@ -72,7 +70,7 @@ Object code is a portion of machine code that has not yet been linked into a com
 | iostream | Header file provided by the C/C++ language for input/output processing |
 | <>       | Means that this file is available in a predefined directory            |
 
-## Escape Sequence
+# C++ Escape Sequence
 
 Backslash ' \ ' is used to print special characters.
 
@@ -2184,7 +2182,9 @@ When you open a `.h` the contents of the file you often see looks something li
 #ifndef main_h
 #define main_h
 
-void function_name();#endif /* main_h */
+void function_name();
+
+#endif /* main_h */
 ```
 
 They are called as an "include guard" which checks for inclusion.
@@ -2378,3 +2378,9 @@ The code here is divided into 3 stages:
    	return 0;
    }
   ```
+
+  # Using header files
+
+  [C++ Header Files](https://www.youtube.com/watch?v=9RJTQmK0YPI)
+
+  > Make sure you add `#pragma once` inside your header file.
