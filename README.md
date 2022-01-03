@@ -198,6 +198,8 @@ Since keywords are referred names for a compiler, they can’t be used as variab
 | else                    | return                 |                             |
 | enum                    | short                  |                             |
 
+[Source](https://en.cppreference.com/w/cpp/keyword)
+
 ## Literals
 
 <!-- ![data/Untitled%204.png](data/Image5.png) -->
