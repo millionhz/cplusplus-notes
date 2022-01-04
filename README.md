@@ -1662,7 +1662,7 @@ int main()
 
 For the program above, at the time of compilation the machine code for `swap` is copied into the machine code of `main`. In other words the body of `swap` is copied into `main` at the time of compilation.
 
-In the cas eof call by reference, the activation frame of `swap` is the same as the activation frame of `main`.
+In the case of call by reference, the activation frame of `swap` is the same as the activation frame of `main`.
 
 For this reason, call by reference is only used for simple functions. 
 
@@ -1679,6 +1679,11 @@ void (*func)() = myFunc; // myfunc is a function
 
 func(); // calling the function 
 ```
+
+## Inline Functions
+`inline` is a request to the compiler to copy the function body to the place where that specific function was called.
+
+This is done to reduce the overhead when the execution time of the function is less than the time needed for control transfer.
 
 # Stack Frame
 
@@ -1769,7 +1774,7 @@ int main()
 // 01234
 ```
 
-# Reference (`&`)
+# **Reference** (`&`)
 
 `&` can also be used to get the address of a specific variable.
 
@@ -1780,7 +1785,7 @@ cout << &x << endl;
 // 0x7ffe6c03214c
 ```
 
-A reference of a variable is essentially that varaible but different name
+**A reference of a variable is essentially that variable but different name**
 
 ```cpp
 int i = 5;
@@ -1792,6 +1797,7 @@ cout << integer << endl; // 5
 integer++;
 cout << i << endl; // 6
 ```
+[Reference declaration](https://en.cppreference.com/w/cpp/language/reference)
 
 [C++ References - tutorialspoint](https://www.tutorialspoint.com/cplusplus/cpp_references.htm)
 
@@ -2266,6 +2272,12 @@ There might be a situation where you might have to define a header file in anoth
 #endif
 ```
 
+# Lvalues and Rvalues
+
+[Understanding lvalues and rvalues](https://www.internalpointers.com/post/understanding-meaning-lvalues-and-rvalues-c)
+
+[Lvalues and Rvalues (C++) - Microsoft](https://docs.microsoft.com/en-us/cpp/cpp/lvalues-and-rvalues-visual-cpp?view=msvc-170)
+
 # Struct
 
 [CLASSES vs STRUCTS in C++ - YouTube](https://www.youtube.com/watch?v=fLgTtaqqJp0)
@@ -2317,7 +2329,7 @@ Few points to remember:
 
 ## Defining Classes and Objects
 
-Classes can be defined in a contained manner, for example:
+### Classes can be defined in a contained manner, for example:
 
 ```cpp
 class name_t {
@@ -2335,7 +2347,7 @@ int main(int argc, char const *argv[]) {
 }
 ```
 
-Or the class can be defined using the scope resolution operator `::`:
+### Or the class can be defined using the scope resolution operator `::`:
 
 ```cpp
 class name_t {
@@ -2353,7 +2365,7 @@ int main(int argc, char const *argv[]) {
 }
 ```
 
-The code here is divided into 3 stages:
+### Or the class can be defined and declared separately, the code here is divided into 3 stages:
 
 -  *Interface*: Usually kept in the header file.
   
@@ -2381,8 +2393,63 @@ The code here is divided into 3 stages:
    }
   ```
 
-  # Using header files
+## Virtual Functions
+A virtual function is a member function in the base class that we expect to redefine in derived classes.
 
-  [C++ Header Files](https://www.youtube.com/watch?v=9RJTQmK0YPI)
+Basically, a virtual function is used in the base class in order to ensure that the function is overridden. This **especially applies** to cases where a **pointer** of base class points to an object of a derived class.
 
-  > Make sure you add `#pragma once` inside your header file.
+A virutal function can be declared using the `virtual` keyword.
+
+```cpp
+class Base
+{
+public:
+  virtual void print()
+  {
+    // code
+  }
+};
+```
+
+## Pure Virtual Functions & Abstract Classes
+A pure virtual function (or an abstract function) is a function that we have to overide in our derived class.
+
+A pure virtual function can be declared using the following syntax:
+```cpp
+virtual void show() = 0;
+```
+
+If a class has a pure virtual function, it is considered **abstract**.
+
+# Operator Overloading
+[OPERATORS and OPERATOR OVERLOADING in C++](https://www.youtube.com/watch?v=mS9755gF66w)
+
+[Operators - Overloading and Declarations](https://en.cppreference.com/w/cpp/language/operators)
+
+Always delete the `=` operator to ensure there is no accidental soft copy:
+```cpp
+void operator=(const Classame &_) = delete;
+```
+
+## Self Assignment in `=` operator
+Self Assignment can result in unexpectdd errors.
+
+```cpp
+// Guard self assignment
+if (this == &other)
+  return *this;
+```
+
+# Using header files
+
+[C++ Header Files](https://www.youtube.com/watch?v=9RJTQmK0YPI)
+
+> Make sure you add `#pragma once` inside your header file.
+
+# Other C++ concepts
+
+- Templates
+- Labmda Functions
+- [Aggregate Initializiation](https://docs.microsoft.com/en-us/cpp/cpp/initializing-classes-and-structs-without-constructors-cpp?view=msvc-170
+)
+- Initializer Lists
