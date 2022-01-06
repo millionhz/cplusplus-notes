@@ -2449,7 +2449,7 @@ if (this == &other)
 # Other C++ concepts
 
 - Templates
-- Labmda Functions
+- [Lambda Functions](https://docs.microsoft.com/en-us/cpp/cpp/lambda-expressions-in-cpp?view=msvc-170)
 - [Aggregate Initializiation](https://docs.microsoft.com/en-us/cpp/cpp/initializing-classes-and-structs-without-constructors-cpp?view=msvc-170
 )
 - Initializer Lists
