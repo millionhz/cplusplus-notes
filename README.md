@@ -8,7 +8,9 @@
 
 [Cherno's C++ Series](https://www.youtube.com/playlist?list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb)
 
-[Learn C++ Programming -Beginner to Advance- Deep Dive in C++](https://www.udemy.com/course/cpp-deep-dive/)
+[Programming and Data Structures](https://eecs280staff.github.io/notes/index.html)
+
+[Learn C++ Programming -Beginner to Advance - Deep Dive in C++](https://www.udemy.com/course/cpp-deep-dive/)
 
 # C++ - Intro
 
