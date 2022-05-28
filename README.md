@@ -66,11 +66,11 @@ Object code is a portion of machine code that has not yet been linked into a com
 
 ### Explaining #include \<iostream\>
 
-| Symbol   | Description                                                            |
-|:--------:|:----------------------------------------------------------------------:|
-| \#       | Preprocessor Directive                                                 |
+|  Symbol  |                              Description                               |
+| :------: | :--------------------------------------------------------------------: |
+|    \#    |                         Preprocessor Directive                         |
 | iostream | Header file provided by the C/C++ language for input/output processing |
-| <>       | Means that this file is available in a predefined directory            |
+|    <>    |      Means that this file is available in a predefined directory       |
 
 # C++ Escape Sequence
 
@@ -78,19 +78,19 @@ Backslash ' \ ' is used to print special characters.
 
 <!-- ![](data/Image3.png) -->
 
-| Escape Sequence | Description          |
-|:---------------:|:--------------------:|
-| \'              | single quote         |
-| \"              | double quote         |
-| \?              | question mark        |
-| \\\             | backslash            |
-| \a              | audible bell         |
-| \b              | backspace            |
-| \f              | form feed - new page |
-| \n              | line feed - newline  |
-| \r              | carriage return      |
-| \t              | horizontal tab       |
-| \v              | vertical tab         |
+| Escape Sequence |     Description      |
+| :-------------: | :------------------: |
+|       \'        |     single quote     |
+|       \"        |     double quote     |
+|       \?        |    question mark     |
+|       \\\       |      backslash       |
+|       \a        |     audible bell     |
+|       \b        |      backspace       |
+|       \f        | form feed - new page |
+|       \n        | line feed - newline  |
+|       \r        |   carriage return    |
+|       \t        |    horizontal tab    |
+|       \v        |     vertical tab     |
 
 # Errors
 
@@ -238,79 +238,79 @@ Operators are symbols that triggers an action when applied to variables and othe
 
 ### Arithmetic Operators
 
-| Operator | Description    |
-|:--------:|:--------------:|
-| +        | Addition       |
-| -        | Subtraction    |
-| *        | Multiplication |
-| /        | Division       |
-| %        | Modulus        |
+| Operator |  Description   |
+| :------: | :------------: |
+|    +     |    Addition    |
+|    -     |  Subtraction   |
+|    *     | Multiplication |
+|    /     |    Division    |
+|    %     |    Modulus     |
 
 ### Increment and Decrement Operators
 
 | Operator | Description |
-|:--------:|:-----------:|
-| ++       | Increment   |
-| −−       | Decrement   |
+| :------: | :---------: |
+|    ++    |  Increment  |
+|    −−    |  Decrement  |
 
 ### Relational Operators
 
-| Operator | Description              |
-|:--------:|:------------------------:|
-| ==       | Is equal to              |
-| !=       | Is not equal to          |
-| >        | Greater than             |
-| <        | Less than                |
-| >=       | Greater than or equal to |
-| <=       | Less than or equal to    |
+| Operator |       Description        |
+| :------: | :----------------------: |
+|    ==    |       Is equal to        |
+|    !=    |     Is not equal to      |
+|    >     |       Greater than       |
+|    <     |        Less than         |
+|    >=    | Greater than or equal to |
+|    <=    |  Less than or equal to   |
 
 ### Logical Operators
 
-| Operator | Description                                                                                                                                                                        |
-|:--------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| &&       | And operator. Performs logical conjunction of two expressions.(if both expressions evaluate to True, result is True. If either expression evaluates to False, the result is False) |
-| \|\|     | Or operator. Performs a logical disjunction on two expressions.(if either or both expressions evaluate to True, the result is True)                                                |
-| !        | Not operator. Performs logical negation on an expression.                                                                                                                          |
+| Operator |                                                                                    Description                                                                                     |
+| :------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|    &&    | And operator. Performs logical conjunction of two expressions.(if both expressions evaluate to True, result is True. If either expression evaluates to False, the result is False) |
+|   \|\|   |                        Or operator. Performs a logical disjunction on two expressions.(if either or both expressions evaluate to True, the result is True)                         |
+|    !     |                                                             Not operator. Performs logical negation on an expression.                                                              |
 
 ### Bitwise Operators
 
 Used on the **bits** of data.
 
-| Operator | Description                      |
-|:--------:|:--------------------------------:|
-| <<       | Binary Left Shift Operator       |
-| !=       | Is not equal to                  |
-| >>       | Binary Right Shift Operator      |
-| ~        | Binary One's Complement Operator |
-| &        | Binary AND Operator              |
-| ^        | Binary XOR Operator              |
-| \|       | Binary OR Operator               |
+| Operator |           Description            |
+| :------: | :------------------------------: |
+|    <<    |    Binary Left Shift Operator    |
+|    !=    |         Is not equal to          |
+|    >>    |   Binary Right Shift Operator    |
+|    ~     | Binary One's Complement Operator |
+|    &     |       Binary AND Operator        |
+|    ^     |       Binary XOR Operator        |
+|    \|    |        Binary OR Operator        |
 
 ### Assignment Operators
 
-| Operator | Description                     |
-|:--------:|:-------------------------------:|
-| =        | Assign                          |
-| +=       | Increments, then assign         |
-| -=       | Decrements, then assign         |
-| *=       | Multiplies, then assign         |
-| /=       | Divides, then assign            |
-| %=       | Modulus, then assign            |
-| <<=      | Left shift and assign           |
-| >>=      | Right shift and assign          |
-| &=       | Bitwise AND assign              |
-| ^=       | Bitwise exclusive OR and assign |
-| \|=      | Bitwise inclusive OR and assign |
+| Operator |           Description           |
+| :------: | :-----------------------------: |
+|    =     |             Assign              |
+|    +=    |     Increments, then assign     |
+|    -=    |     Decrements, then assign     |
+|    *=    |     Multiplies, then assign     |
+|    /=    |      Divides, then assign       |
+|    %=    |      Modulus, then assign       |
+|   <<=    |      Left shift and assign      |
+|   >>=    |     Right shift and assign      |
+|    &=    |       Bitwise AND assign        |
+|    ^=    | Bitwise exclusive OR and assign |
+|   \|=    | Bitwise inclusive OR and assign |
 
 ### Misc Operators
 
-| Operator | Description                              |
-|:--------:|:----------------------------------------:|
-| ,        | Comma operator                           |
-| sizeOf() | Returns the size of a memory location    |
-| &        | Returns the address of a memory location |
-| *        | Pointer to a variable                    |
-| ? :      | Conditional Expression                   |
+| Operator |               Description                |
+| :------: | :--------------------------------------: |
+|    ,     |              Comma operator              |
+| sizeOf() |  Returns the size of a memory location   |
+|    &     | Returns the address of a memory location |
+|    *     |          Pointer to a variable           |
+|   ? :    |          Conditional Expression          |
 
 ### Operator Precedence
 
@@ -641,12 +641,12 @@ y = x++ + 1;
 
 # Naming Convention for C++
 
-| Object    | Convention              |
-|:---------:|:-----------------------:|
-| Constants | ALL_CAPS, ALLCAPS       |
-| Variables | all_small, allsmall     |
+|  Object   |       Convention        |
+| :-------: | :---------------------: |
+| Constants |    ALL_CAPS, ALLCAPS    |
+| Variables |   all_small, allsmall   |
 | Functions | firstSmallRestCamelCase |
-| Classes   | CamelCase               |
+|  Classes  |        CamelCase        |
 
 [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html#Naming)
 
@@ -706,12 +706,12 @@ const double CAN_VOLUME = 0.355; // Single line comment
 # C++ Data Types
 
 | Simple/Basic | Modifiers | Qualifiers | Derived (Structured) | Composite (Advanced) |
-|:------------:|:---------:|:----------:|:--------------------:|:--------------------:|
-| char         | signed    | static     | arrays               | lists                |
-| int          | unsigned  | const      | structures           | queues               |
-| float        | long      | volatile   | unions               | stacks               |
-| double       | -         | void       | classes              | trees                |
-| -            | -         | -          | -                    | graphs               |
+| :----------: | :-------: | :--------: | :------------------: | :------------------: |
+|     char     |  signed   |   static   |        arrays        |        lists         |
+|     int      | unsigned  |   const    |      structures      |        queues        |
+|    float     |   long    |  volatile  |        unions        |        stacks        |
+|    double    |     -     |    void    |       classes        |        trees         |
+|      -       |     -     |     -      |          -           |        graphs        |
 
 [**Size Chart**](https://docs.oracle.com/cd/E19253-01/817-6223/chp-typeopexpr-2/index.html)
 
@@ -732,15 +732,15 @@ Char is actually an integer in the backend and can be used to make a program mor
 
 <!--![data/Untitled%206.png](data/Image8.png)-->
 
-| Type           | Range                                                    | Size    |
-|:--------------:|:--------------------------------------------------------:|:-------:|
-| int            | -2,147,483,648 ... 2,147,483,647                         | 4 bytes |
-| unsigned       | 0 ... 4,294,967,295                                      | 4 bytes |
-| short          | -32,768 ... 32,767                                       | 2 bytes |
-| unsigned short | 0 ... 65,535                                             | 2 bytes |
-| long long      | -9,223,372,036,854,775,808 ... 9,223,372,036,854,775,807 | 8 bytes |
-| double         | Double-precision floating-point                          | 8 bytes |
-| float          | Single-precision floating point                          | 4 bytes |
+|      Type      |                          Range                           |  Size   |
+| :------------: | :------------------------------------------------------: | :-----: |
+|      int       |             -2,147,483,648 ... 2,147,483,647             | 4 bytes |
+|    unsigned    |                   0 ... 4,294,967,295                    | 4 bytes |
+|     short      |                    -32,768 ... 32,767                    | 2 bytes |
+| unsigned short |                       0 ... 65,535                       | 2 bytes |
+|   long long    | -9,223,372,036,854,775,808 ... 9,223,372,036,854,775,807 | 8 bytes |
+|     double     |             Double-precision floating-point              | 8 bytes |
+|     float      |             Single-precision floating point              | 4 bytes |
 
 [**A better size chart here**](https://docs.oracle.com/cd/E19253-01/817-6223/chp-typeopexpr-2/index.html)
 
@@ -951,13 +951,13 @@ NOTE: `cin.clear()` and storing the cin's data in a dummy variable have separate
 
 <!--![data/Untitled%208.png](data/Image10.png)-->
 
-| Statement                                   | Output       | Comment                                                                                              |
-|:-------------------------------------------:|:------------:|:----------------------------------------------------------------------------------------------------:|
-| `cout << 12.345678;`                        | `12.3457`    | By default, a number is printed with 6 significant digits.                                           |
-| `cout << fixed << setprecision(2) << 12.3;` | `12.30`      | Use the fixed and setprecision manipulators to control the number of digits after the decimal point. |
-| `cout << ":" << setw(6) << 12;`             | `:    12`    | Four spaces are printed before the number, for a total width of 6 characters.                        |
-| `cout << ":" << set(2) << 123;`             | `:123`       | If the width not sufficient, it is ignored.                                                          |
-| `cout << setw(6) << ":" << 12;`             | `     :12.3` | The width only refers to the next item. Here, the : is preceded by five spaces.                      |
+|                  Statement                  |    Output    |                                               Comment                                                |
+| :-----------------------------------------: | :----------: | :--------------------------------------------------------------------------------------------------: |
+|            `cout << 12.345678;`             |  `12.3457`   |                      By default, a number is printed with 6 significant digits.                      |
+| `cout << fixed << setprecision(2) << 12.3;` |   `12.30`    | Use the fixed and setprecision manipulators to control the number of digits after the decimal point. |
+|       `cout << ":" << setw(6) << 12;`       |  `:    12`   |            Four spaces are printed before the number, for a total width of 6 characters.             |
+|       `cout << ":" << set(2) << 123;`       |    `:123`    |                             If the width not sufficient, it is ignored.                              |
+|       `cout << setw(6) << ":" << 12;`       | `     :12.3` |           The width only refers to the next item. Here, the : is preceded by five spaces.            |
 
 ## setprecision() examples
 
@@ -1156,12 +1156,8 @@ yes() || yes(); // output: yes
 # De Morgan's Law
 
 $$
-! \; (A \; \&\& \; B)  == \; !A \; || \; !B
+!(A \& B)  == !A || !B
 $$
-
-```latex
-$$! \; (A \; \&\& \; B)  == \; !A \; || \; !B$$
-```
 
 # Comparison of Floating-Point Numbers
 
