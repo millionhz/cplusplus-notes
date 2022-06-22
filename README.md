@@ -784,12 +784,6 @@ $$
 -2147483648 \iff 0 \iff 2147483647
 $$
 
-```latex
-$$-\frac{2^{32}}{2} \iff 0 \iff \frac{2^{32}}{2}-1$$
-
-$$-2147483648 \iff 0 \iff 2147483647$$
-```
-
 > 0 is considered a positive number. Thus, 1 is subtracted from the total number of positive integers when calculating total range of positive numbers.
 
 ## Storing floats in int
@@ -1147,17 +1141,15 @@ bool no()
 
 int main()
 {
-yes() || no(); // output: yes
-no() || yes(); // output: noyes
-yes() || yes(); // output: yes
+  yes() || no(); // output: yes
+  no() || yes(); // output: noyes
+  yes() || yes(); // output: yes
 }
 ```
 
 # De Morgan's Law
 
-$$
-!(A \& B)  == !A || !B
-$$
+$$ !(A \& B)  == !A || !B $$
 
 # Comparison of Floating-Point Numbers
 
@@ -1165,13 +1157,7 @@ Exact Comparison of Floating-Point Numbers Floating-point numbers have only a li
 
 Use the following equation to compare the Floating-Point Number:
 
-$$
-|x-y|<\epsilon
-$$
-
-```latex
-$$|x-y|<\epsilon$$
-```
+$$ |x-y|<\epsilon $$
 
 ```cpp
 double x = 2.0;
@@ -1216,16 +1202,16 @@ string digit_name;
 
 switch (digit)
 {
- case 1: digit_name = "one"; break; // if digit == 1
- case 2: digit_name = "two"; break;
- case 3: digit_name = "three"; break;
- case 4: digit_name = "four"; break;
- case 5: digit_name = "five"; break;
- case 6: digit_name = "six"; break;
- case 7: digit_name = "seven"; break;
- case 8: digit_name = "eight"; break;
- case 9: digit_name = "nine"; break;
- default: digit_name = ""; break;
+  case 1: digit_name = "one"; break; // if digit == 1
+  case 2: digit_name = "two"; break;
+  case 3: digit_name = "three"; break;
+  case 4: digit_name = "four"; break;
+  case 5: digit_name = "five"; break;
+  case 6: digit_name = "six"; break;
+  case 7: digit_name = "seven"; break;
+  case 8: digit_name = "eight"; break;
+  case 9: digit_name = "nine"; break;
+  default: digit_name = ""; break;
 }
 
 cout << digit_name << endl;
