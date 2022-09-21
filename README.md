@@ -2,15 +2,15 @@
 
 ## Other Resources
 
-[A Complete Guide to Programming in C++](http://www.lmpt.univ-tours.fr/~volkov/C++.pdf)
-
-<!-- [A Complete Guide to Programming in C++](https://github.com/millionhz/MY-CS-BOOKS/raw/main/Books/A%20Complete%20Guide%20to%20Programming%20in%20C%2B%2B.pdf) -->
-
-[Cherno's C++ Series](https://www.youtube.com/playlist?list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb)
+[A Complete Guide to Programming in C++](http://www.lmpt.univ-tours.fr/~volkov/C++.pdf) (Book)
 
 [Programming and Data Structures](https://eecs280staff.github.io/notes/index.html)
 
 [Learn C++ Programming -Beginner to Advance - Deep Dive in C++](https://www.udemy.com/course/cpp-deep-dive/)
+
+[C++ Programming Course](https://www.youtube.com/watch?v=8jLOx1hD3_o) (freeCodeCamp)
+
+[Cherno's C++](https://www.youtube.com/playlist?list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb) (YouTube Series)
 
 # C++ - Intro
 
